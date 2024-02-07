@@ -1,0 +1,766 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>AVAILABLE ROOMS | The Dusk Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+    <link rel="stylesheet" href="../../css/includes/topbar.css">
+    <link rel="stylesheet" href="../../css/includes/footer.css">
+    <link rel="stylesheet" href="../../css/includes/tags.css">
+    <style>
+* {
+  box-sizing: border-box;
+  max-width:100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 0;
+  background-color: #fff;
+}
+
+/* ROOT STYLES */
+:root {
+    --primary-color: #faf5e2; /* golden yellow */
+    --primary-compl-color: #bd9526; /* darker yellow, slightly more gold */
+    --secondary-color: #e0d7c7; /* khaki */
+    --secondary-compl-color: #f5f3ef; /* peach white */
+    --tertiary-color: #56453e; /* pruce */
+
+    --black-color: #211c1d;
+
+    /* fonts */
+
+    --primary-font-family: 'reforma-1918', serif;
+    --primary-font-family-bold: 'reforma-1918-bold', serif;
+    --secondary-font-family: 'Poppins', sans-serif;
+    --secondary-font-family-sbold: 'Poppins-SBOLD', sans-serif;
+    --secondary-font-family-bold: 'Poppins-BOLD', sans-serif;
+}
+/* font imports  */
+@font-face {
+    font-family: 'Poppins';
+    src: url("../../static/fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: 'Poppins-SBOLD';
+    src: url("../../static/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+    font-family: 'Poppins-BOLD';
+    src: url("../../static/fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+    font-family: 'Reforma-1918';
+    src: url("../../static/fonts/reforma-1918-cufonfonts/Reforma1918-Blanca.otf");
+}
+@font-face {
+    font-family: 'Reforma-1918-BOLD';
+    src: url("../../static/fonts/reforma-1918-cufonfonts/Reforma1918-Negra.otf");
+}
+            
+/* The progress container (grey background) */
+.progress-container {
+  clear:both;
+  width: 100%;
+  height: 5px;
+  background: white;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  clear:both;
+  height: 5px;
+  background: var(--primary-compl-color);
+  font-family: var(--secondary-font-family);
+  width: 0%;
+}
+
+/* main content */
+
+.break-space {
+    padding-top: 110px;    
+    height: 28vh;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#availableheading{
+    font-family: var(--primary-font-family-bold);
+    text-transform: capitalize;
+    font-size:30px;
+    text-align: center;
+}
+
+.progress_container {
+  padding-top: 115px;
+  padding-bottom: 25px;
+}
+
+.container4progress{
+  margin-top: 25px;
+  background-color:#CCC;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container4progress .progress-bar{
+  height:100%;
+  background-color: var(--primary-compl-color);
+  width:60%;
+  color:white;
+  text-align:center;
+  font-size:17px;
+}
+
+/* availability (rooms) */
+
+#availability .room {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-compl-color);
+  margin: 30px;
+}
+
+#availability .room-information {
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 100%;
+}
+
+#availability .room-information hr {
+  height: 3px;
+  width: 25%;
+  color: var(--primary-compl-color);
+  background-color: var(--primary-compl-color);
+  border: var(--primary-compl-color);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+#availability .room-information .title {
+    font-family: var(--primary-font-family-bold);
+    font-size: 32px;
+    line-height: 36px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-transform: capitalize;
+}
+
+#availability .room-information .details {
+  text-align: left;
+  font-family: var(--secondary-font-family);
+}
+
+#availability .room-information .room-details {
+  margin-bottom: 24px;
+}
+
+#availability .room-information .room-details ul {
+  margin-left: 24px;
+ }
+
+#availability .room-information  .price-ratings {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -5px;
+}
+
+#availability .room-information  .price-ratings .price span {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 45px;
+}
+
+.room img {
+  width:100%;
+  height:350px;
+  object-fit: cover;
+}
+
+picture{
+  width:100%;
+}
+
+
+.selectroombtn{
+    width:140px;
+    padding: 5px 10px;
+    height:40px;
+    font-size: 15px;
+    background-color: var(--secondary-compl-color);
+    border: 2px solid var(--tertiary-color);
+    color: var(--tertiary-color);
+    font-family: var(--secondary-font-family-sbold);
+    transition: ease .3s;
+    cursor: pointer;
+}
+
+.selectroombtn:hover{
+    background-color: var(--primary-compl-color);
+    color:black;
+    border: 2px solid var(--tertiary-color);
+}
+
+/* desktop */
+@media screen and (min-width: 992px) {
+
+  #availability .room {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #availability .room-information .details {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #availability .room-information .details hr {
+    display: none;
+  }
+
+  #availability .room-information .price-ratings {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #availableheading{
+    font-size:35px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .container4progress{
+    margin-top: 25px;
+    background-color: whitesmoke;
+    width:35%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container4progress .progress-bar{
+    height:100%;
+    background-color:var(--primary-compl-color);
+    width:40%;
+    color:var(--primary-color);
+    text-align:center;
+    font-size:15px;
+  }
+
+  footer .footer_container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.breakk {
+    height: 15vh;
+}
+
+
+/* Footer */
+footer .footer_container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--secondary-compl-color);
+}
+
+.title2{
+    margin:auto;
+    font-size: 25px;
+    font-family: var(--primary-font-family-bold);
+    text-align: center;
+    letter-spacing: 1px;
+}
+.title3{
+    font-family: var(--secondary-font-family);
+    font-size:18px;
+    text-align: center;
+    margin:auto;
+}
+
+footer a {
+    /* font-family: var(--primary-font-family); */
+    /* second option ^ */
+    font-family: var(--secondary-font-family);
+    text-decoration: none;
+    transition: all .2s;
+    color: #000000;
+}
+
+footer a:hover {
+    color: var(--primary-compl-color);
+}
+
+footer h4 {
+    font-family: var(--primary-font-family-bold);
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+footer h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: var(--primary-compl-color);
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+footer ul {
+  list-style:none;
+  width:100%;
+  padding:0;
+}
+
+footer ul li {
+  line-height: 1.8em;
+}
+
+.thedusk, .quicklinks, .hotel-reservations, .restaurant-reservations {
+  margin-bottom: 32px;
+}
+
+footer .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: var(--primary-compl-color);
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  transition: all 0.2s;
+}
+
+footer .social-links a:hover {
+  color: var(--tertiary-color);
+  background-color: var(--primary-color);
+}
+
+form.subscribe input {
+  height: 35px;
+  width: 220px;
+  margin: 8px 0px;
+  border: none;
+  outline: none;
+  padding: 6px;
+  font-size: 14px;
+}
+
+form.subscribe .btn {
+  height: 35px;
+  background: var(--primary-compl-color);
+  border: none;
+  padding: 0px 6px;
+  margin: 8px 0px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+/* Subscribe */
+#subscribe .subscribe_container {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: var(--secondary-compl-color);
+  border-top: 2px solid #ffffff;
+  text-align: center;
+}
+#subscribe h2 {
+  font-family: var(--primary-font-family-bold);
+}
+#subscribe p {
+  font-family: var(--secondary-font-family);
+}
+
+form.subscribe input {
+  height: 35px;
+  width: 220px;
+  margin: 8px 0px;
+  border: none;
+  outline: none;
+  padding: 6px;
+  font-size: 14px;
+}
+
+form.subscribe .btn {
+  height: 35px;
+  background: var(--primary-compl-color);
+  border: none;
+  padding: 0px 6px;
+  margin: 8px 0px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+/* responsiveness below */
+
+
+    </style>
+</head>
+
+<body>
+  <div class="wrapper">
+            <div id="topbar-container">
+            <a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+            <div id="topbar-right-container">
+                <button id="topbar-member-login-btn" type="button">
+                    <img src="../../static/account_icon.svg">
+                    Member sign in
+                </button>
+                <a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+                    BOOK NOW
+                </a>
+                <button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+                    <div class="btn-line"></div>
+                    <div class="btn-line"></div>
+                    <div class="btn-line"></div>
+                </button>
+            </div>
+            <div id="navigation-outer-darken"></div>
+            <div id="navigation-container">
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">ROOMS</button>
+                    <div class="navigation-section-element">
+                        <a href="./room_landing_page.html">ROOMS</a>
+                        <a href="./suite_landing_page.html">SUITES</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">DINING</button>
+                    <div class="navigation-section-element">
+                        <a href="./restaurants.html">DAWN</a>
+                        <a href="./reservations.html">RESERVATIONS</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">EVENTS</button>
+                    <div class="navigation-section-element">
+                        <a href="./event_venue.html">VENUE</a>
+                        <a href="./event_wedding.html">WEDDING</a>
+                        <a href="./event_corporate.html">CORPORATE</a>
+                        <a href="./event_inquiry.html">INQUIRY</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">FACILITIES</button>
+                    <div class="navigation-section-element">
+                        <a href="./facilities.html">FACILITIES</a>
+                        <a href="./facilities_booking.html">BOOKING</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">OTHERS</button>
+                    <div class="navigation-section-element">
+                        <a href="./promotions.html">PROMOTIONS</a>
+                        <a href="./contact_us.html">CONTACT US</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- PREMIER SUITE INFORMATION  -->
+
+<br>
+<div class="break-space">
+  <p id="availableheading">
+    available rooms
+    <div class="container4progress">
+      <div class="progress-bar">
+        Completion Status: 40%
+      </div>
+    </div>
+  </p>
+</div> 
+
+<br>
+<br>
+<br>
+
+<!-- Availability -->
+<div id="availability">
+  <div class="container">
+    <div class="room">
+      <picture>
+        <source media="(min-width:650px)" srcset="https://www.home2decor.com/wp-content/uploads/2022/12/Best-interior-designers-in-Hyderabad-with-price.jpg" >
+        <img src="https://www.home2decor.com/wp-content/uploads/2022/12/Best-interior-designers-in-Hyderabad-with-price.jpg" alt="duskbedroom" class="rooms">
+      </picture>
+      <!-- used a link for clarity of the image -->
+      <div class="room-information">
+        <div class="title">Dusk Suite</div>
+        <hr>
+        <div class="details">
+          <div class="room-details">
+            <p>80 m² / 861 ft² <span style="color: #bd9526;" >|</span> 2 Guests <span style="color:#bd9526;">|</span> City View</p>
+            <br>
+            <ul>
+              <li>Maximum Pax: 2</li>
+              <li>1 King size bed</li>
+              <li>40' inch PRISM+ TV</li>
+              <li>Unlimited wireless internet access</li>
+              <li>Coffee and tea making facilities</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="price-ratings">
+            <div class="price">
+              <p>From:</p>
+              <p><span>$890.90</span>/night</p>
+              <p>Includes taxes & fees</p>
+            </div>
+          </div>
+        </div>
+        <a href="room_payments.html">
+          <input type="submit" value="SELECT ROOM" class="selectroombtn">
+        </a>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="room">
+      <picture>
+        <img src="../../static/rooms/barbedroom.png" alt="premiersuite" class="rooms">
+      </picture>
+      <div class="room-information">
+        <div class="title">Bar Suite</div>
+        <hr>
+        <div class="details">
+          <div class="room-details">
+            <p>75 m² / 807 ft² <span style="color: #bd9526;" >|</span> 4 Guests <span style="color:#bd9526;">|</span> City View</p>
+            <br>
+            <ul>
+              <li>Maximum Pax: 4</li>
+              <li>1 King size bed</li>
+              <li>40'inch PRISM+ TV </li>
+              <li>Minibar snacks</li>
+              <li>Unlimited wireless internet access</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="price-ratings">
+            <div class="price">
+              <p>From:</p>
+              <p><span>$790.90</span>/night</p>
+              <p>Includes taxes & fees</p>
+            </div>
+          </div>
+        </div>
+        <a href="./room_payments.html">
+          <input type="submit" value="SELECT ROOM" class="selectroombtn">
+        </a>
+      </div>
+    </div>
+
+      <br>
+
+    <div class="room">
+      <picture>
+        <img src="../../static/rooms/roofbedroom.png" alt="premiersuite" class="rooms">
+      </picture>
+      <div class="room-information">
+        <div class="title">Rooftop Garden Suite</div>
+        <hr>
+        <div class="details">
+          <div class="room-details">
+            <p>70 m² / 753 ft² <span style="color: #bd9526;" >|</span> 4 Guests <span style="color:#bd9526;">|</span> Skyline View</p>
+            <br>
+            <ul>
+              <li>Maximum Pax: 4</li>
+              <li>2 King size beds</li>
+              <li>40' inch PRISM+ TV</li>
+              <li>2 work desk with 24' inch iMac</li>
+              <li>Unlimited wireless internet access</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="price-ratings">
+            <div class="price">
+              <p>From:</p>
+              <p><span>$690.90</span>/night</p>
+              <p>Includes taxes & fees</p>
+            </div>
+          </div>
+        </div>
+        <a href="./room_payments.html">
+          <input type="submit" value="SELECT ROOM" class="selectroombtn">
+        </a>
+      </div>
+    </div>
+
+      <br>
+
+    <div class="room">
+      <picture>
+        <img src="../../static/rooms/deluxbedroom.png" alt="premiersuite" class="familyroom">
+      </picture>
+      <div class="room-information">
+        <div class="title">Deluxe Room</div>
+        <hr>
+        <div class="details">
+          <div class="room-details">
+            <p>60 m² / 645ft² <span style="color: #bd9526;" >|</span> 3 Guests <span style="color:#bd9526;">|</span> City View</p>
+            <br>
+            <ul>
+              <li>Maximum Pax: 3</li>
+              <li>1 King Size Bed</li>
+              <li>40' inch PRISM+ TV </li>
+              <li>Coffee and tea making facilities</li>
+              <li>Unlimited wireless internet access</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="price-ratings">
+            <div class="price">
+              <p>From:</p>
+              <p><span>$590.90</span>/night</p>
+              <p>Includes taxes & fees</p>
+            </div>
+          </div>
+        </div>
+        <a href="./room_payments.html">
+          <input type="submit" value="SELECT ROOM" class="selectroombtn">
+        </a>
+      </div>
+    </div>
+
+      <br>
+
+    <div class="room">
+      <picture>
+        <img src="../../static/rooms/naturebedroom.png" alt="premiersuite" class="rooms">
+      </picture>
+      <div class="room-information">
+        <div class="title">Serenity Room</div>
+        <hr>
+        <div class="details">
+          <div class="room-details">
+            <p>50 m² / 538ft² <span style="color: #bd9526;" >|</span> 4 Guests <span style="color:#bd9526;">|</span> Nature View</p>
+            <br>
+            <ul>
+              <li>Maximum Pax: 4</li>
+              <li>2 Queen size beds</li>
+              <li>40' inch PRISM+ TV </li>
+              <li>Minibar snacks</li>
+              <li>Unlimited wireless internet access</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="price-ratings">
+            <div class="price">
+              <p>From:</p>
+              <p><span>$490.90</span>/night</p>
+              <p>Includes taxes & fees</p>
+            </div>
+          </div>
+        </div>
+        <a href="./room_payments.html">
+          <input type="submit" value="SELECT ROOM" class="selectroombtn">
+        </a>
+      </div>
+    </div>
+
+      <br>
+
+    <div class="room">
+      <picture>
+        <img src="../../static/rooms/classicbedroom.png" alt="premiersuite" class="rooms">
+      </picture>
+      <div class="room-information">
+        <div class="title">Classic Room</div>
+        <hr>
+        <div class="details">
+          <div class="room-details">
+            <p>40 m² / 430ft² <span style="color: #bd9526;" >|</span> 3 Guests <span style="color:#bd9526;">|</span> Skyline View</p>
+            <br>
+            <ul>
+              <li>Maximum Pax: 3</li>
+              <li>1 King Size Bed</li>
+              <li>40' inch PRISM+ TV </li>
+              <li>Coffee and tea making facilities</li>
+              <li>Unlimited wireless internet access </li>
+              
+            </ul>
+          </div>
+          <hr>
+          <div class="price-ratings">
+            <div class="price">
+              <p>From:</p>
+              <p><span>$390.90</span>/night</p>
+              <p>Includes taxes & fees</p>
+            </div>
+          </div>
+        </div>
+        <a href="./room_payments.html">
+          <input type="submit" value="SELECT ROOM" class="selectroombtn">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="breakk"></section>
+
+<!-- footer -->
+<div id="footer">
+            <h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+            <h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+            <hr>
+
+            <div id="footer-details">
+                <div id="footer-contact-container" class="footer-section-container">
+                    <h2>GENERAL ENQUIRIES</h2>
+                    <p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+                    <p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+                </div>
+                <div class="footer-section-container">
+                    <h2>CHECK IN / OUT</h2>
+                    <p>Check in from: 10:00</p>
+                    <p>Check out before 12:00</p>
+                </div>
+                <div class="footer-section-container">
+                    <h2>CONNECT WITH US</h2>
+                    <div id="footer-socials-container">
+                        <div class="footer-socials-hover-grow-container">
+                            <a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+                        </div>
+                        <div class="footer-socials-hover-grow-container">
+                            <a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+                        </div>
+                        <div class="footer-socials-hover-grow-container">
+                            <a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

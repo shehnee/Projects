@@ -1,0 +1,335 @@
+/* DEFAULT COLOR */
+:root {
+	--primary-color: #faf5e2; /* golden yellow */
+	--primary-compl-color: #bd9526; /* darker yellow, slightly more gold */
+	--secondary-color: #e0d7c7; /* khaki */
+	--secondary-compl-color: #f5f3ef; /* peach white */
+	--tertiary-color: #56453e; /* pruce */
+
+	--black-color: #211c1d;
+
+	--topbar-height: 82px;
+	--page-horizontal-whitespace: 150px;
+}
+
+/* TOPBAR STYLING */
+#topbar-container {
+	box-sizing: content-box; /* to override asterisk styling in external stylesheets */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	position: sticky;
+	top: 0;
+
+	width: calc(100% - var(--page-horizontal-whitespace) * 2);
+	height: var(--topbar-height);
+
+	padding: 0 var(--page-horizontal-whitespace);
+
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: var(--primary-color);
+
+	color: var(--tertiary-color);
+	background-color: var(--secondary-compl-color);
+
+	z-index: 10;
+}
+
+#comp-logo-a-wrapper {
+	width: auto;
+	height: 100%;
+}
+
+#comp-logo {
+	box-sizing: content-box; /* to override asterisk styling in external stylesheets */
+	width: auto;
+	height: 100%;
+
+	object-fit: cover;
+}
+
+#topbar-right-container {
+	box-sizing: content-box; /* to override asterisk styling in external stylesheets */
+	display: flex;
+	flex-direction: row;
+}
+
+#topbar-member-login-btn {
+	/* css reset: https://stackoverflow.com/a/45890842 */
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	/* end of css reset */
+
+
+	box-sizing: content-box; /* to override asterisk styling in external stylesheets */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	padding-right: 8px;
+	margin-left: 20px;
+	margin-right: 35px;
+
+	transition-property: background-color;
+	transition-duration: 150ms;
+	transition-timing-function: ease-in;
+}
+
+#topbar-member-login-btn > img {
+	box-sizing: content-box; /* to override asterisk styling in external stylesheets */
+	width: 24px;
+	height: 24px;
+	padding: 8px;
+}
+
+#topbar-member-login-btn:hover,
+#topbar-member-login-btn:focus {
+	color: var(--black-color);
+	background-color: #fff;
+}
+
+#topbar-booknow-btn {
+	font: inherit;
+	cursor: pointer;
+}
+
+/* THOMAZ'S HAMBURGER ANIMATIONS WITH JAYDEN'S BUTTON IMPLEMENTATION AND CLEANUP */
+#menu-btn {
+	padding: 8px;
+	margin-left: 12px;
+	margin-top: 6px;
+	border: none;
+	cursor: pointer;
+
+	transition-property: background-color, transform;
+	transition-duration: 500ms;
+	transition-timing-function: ease-in;
+}
+
+#menu-btn:hover > .btn-line {
+	background-color: var(--primary-compl-color);
+}
+
+#menu-btn .btn-line {
+	width: 27px;
+	height: 4px;
+	background: var(--tertiary-color);
+	margin: 0 0 6px 0;
+	transition: all 0.5s ease;
+}
+
+#topbar-container.navopen #menu-btn {
+	transform: rotate(90deg);
+}
+
+#topbar-container.navopen #menu-btn .btn-line:nth-child(1) {
+	transform: translate(0px, 13px) rotate(315deg);
+}
+
+#topbar-container.navopen #menu-btn .btn-line:nth-child(2) {
+	opacity: 0;
+}
+
+#topbar-container.navopen #menu-btn .btn-line:nth-child(3) {
+	transform: translate(0px, -7px) rotate(-315deg);
+}
+
+/* NAVIGATION CONTAINER */
+#navigation-container {
+	display: flex;
+	flex-direction: column;
+
+	position: absolute;
+	top: calc(var(--topbar-height) + 2px);
+	right: 0;
+
+	width: 40%;
+	height: calc(100svh - var(--topbar-height) - 2px);
+
+	transform: scaleX(0);
+	transform-origin: right center;
+
+	background-color: var(--secondary-compl-color);
+
+	transition-property: transform;
+	transition-duration: 150ms;
+	transition-timing-function: ease-in;
+
+	z-index: 10;
+}
+
+#topbar-container.navopen #navigation-container {
+	transform: scaleX(1);
+}
+
+.navigation-section-container {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+
+	padding-top: 10px;
+}
+
+.navigation-section-container > button {
+	position: relative;
+
+	padding-left: 10px;
+	padding-bottom: 10px;
+
+	font-size: 22px;
+	font-weight: 600;
+
+	color: var(--tertiary-color);
+	background-color: unset;
+
+	border: unset;
+
+	cursor: pointer;
+
+	transition-property: color;
+	transition-duration: 150ms;
+	transition-timing-function: ease-in;
+}
+
+.navigation-section-container > button:focus,
+.navigation-section-container > button:hover {
+	color: var(--primary-compl-color);
+}
+
+.navigation-section-element {
+	display: none;
+	flex-direction: column;
+
+	transform: scaleY(0);
+	transform-origin: left top;
+
+	transition-property: transform;
+	transition-duration: 150ms;
+	transition-timing-function: ease-in;
+}
+
+.navigation-section-container.active > .navigation-section-element {
+	display: flex;
+	transform: scaleY(1);
+}
+
+.navigation-section-element > a {
+	padding: 16px 0;
+	padding-left: 25px;
+	text-decoration: none;
+
+	font-size: 14px;
+	font-family: sans-serif;
+
+	color: var(--primary-compl-color);
+	background-color: #fdfdfd;
+}
+
+.navigation-section-element > a:focus,
+.navigation-section-element > a:hover {
+	background-color: white;
+}
+
+.navigation-section-element > a::before {
+	display: block;
+	content: "";
+
+	position: relative;
+	bottom: 16px;
+
+	width: calc(100% - 30px);
+	height: 1px;
+
+	background-color: #c9c9c9;
+}
+
+.navigation-section-element > a:nth-child(1)::before {
+	display: none;
+}
+
+/* NAVIGATION MENU, BACKDROP DARKEN */
+#navigation-outer-darken {
+	display: none;
+
+	position: absolute;
+	top: calc(var(--topbar-height) + 2px);
+	left: 0;
+
+	width: 100%;
+	height: calc(100svh - var(--topbar-height));
+
+	z-index: 2;
+	backdrop-filter: brightness(.8);
+}
+
+#topbar-container.navopen #navigation-outer-darken {
+	display: block;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 900px) {
+	:root {
+		--page-horizontal-whitespace: 40px;
+	}
+
+	/* reduce whitespace between member sign in button and login button */
+	/* add whitespace between company logo and member sign in button */
+	#topbar-member-login-btn {
+		margin-left: 15px;
+		margin-right: 20px;
+	}
+
+	/* reduce amount of columns for promotions-card */
+	.promo-card-grid-container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (max-width: 620px) {
+	:root {
+		/* reduce topbar height */
+		--topbar-height: 64px;
+
+		/* reduce horizontal padding */
+		--page-horizontal-whitespace: 20px;
+	}
+
+	/* reduce whitespace between member sign in button and login button */
+	/* add whitespace between company logo and member sign in button */
+	#topbar-member-login-btn {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	/* shorten section header banner & reduce bottom margin */
+	.section-header-container {
+		height: 200px;
+
+		margin-bottom: 10px;
+	}
+
+	/* increase navigation bar width */
+	#navigation-container {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	:root {
+		--page-horizontal-whitespace: 15px;
+	}
+
+	/* hide member sign in button completely */
+	#topbar-member-login-btn {
+		display: none;
+	}
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10.0, minimum-scale=1, user-scalable=yes"/>
+		<meta name="description" content=":)"/>
+
+		<link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+		<link rel="stylesheet" href="../../css/includes/reset.css">
+		<link rel="stylesheet" href="../../css/includes/topbar.css">
+		<link rel="stylesheet" href="../../css/includes/footer.css">
+		<link rel="stylesheet" href="../../css/includes/tags.css">
+		<link rel="stylesheet" href="../../css/views/event_inquiry_confirmation.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+		<title>The Dusk Hotel | Inquiry</title>
+	</head>
+	<body>
+		<div id="topbar-container">
+			<a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+			<div id="topbar-right-container">
+				<button id="topbar-member-login-btn" type="button">
+					<img src="../../static/account_icon.svg">
+					Member sign in
+				</button>
+				<a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+					BOOK NOW
+				</a>
+				<button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+				</button>
+			</div>
+			<div id="navigation-outer-darken"></div>
+			<div id="navigation-container">
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">ROOMS</button>
+					<div class="navigation-section-element">
+						<a href="./room_landing_page.html">ROOMS</a>
+						<a href="./suite_landing_page.html">SUITES</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">DINING</button>
+					<div class="navigation-section-element">
+						<a href="./restaurants.html">DAWN</a>
+						<a href="./reservations.html">RESERVATIONS</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">EVENTS</button>
+					<div class="navigation-section-element">
+						<a href="./event_venue.html">VENUE</a>
+						<a href="./event_wedding.html">WEDDING</a>
+						<a href="./event_corporate.html">CORPORATE</a>
+						<a href="./event_inquiry.html">INQUIRY</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">FACILITIES</button>
+					<div class="navigation-section-element">
+						<a href="./facilities.html">FACILITIES</a>
+						<a href="./facilities_booking.html">BOOKING</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">OTHERS</button>
+					<div class="navigation-section-element">
+						<a href="./promotions.html">PROMOTIONS</a>
+						<a href="./contact_us.html">CONTACT US</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="header-container">
+			<h1>EVENT INQUIRY</h1>
+		</div>
+		<div id="body-content">
+			<form id="bookingForm" action="finalenquiry.html" method="post" target="_blank">
+				<h2>RFP has successfully submitted!</h2> <br>
+				<p id="submission">Thank you for choosing The Dusk as the destination for your upcoming event.<br>It will be our pleasure to contact you within one business day to discuss a proposal.</p>
+				<br> <br>
+				<div class="input-container">
+
+					<h2 class="underline">Event Information</h2>
+					<br>
+
+					<div class="input-container">
+						<label for="eventType">Type of Event:</label>
+						<span id="eventType"></span>
+					</div>
+			
+					<div class="input-container">
+						<label for="company">Company/Association:</label>
+						<span id="company"></span>
+					</div>
+			
+					<div class="input-container">
+						<label for="eventName">Event Name:</label>
+						<span id="eventName"></span>
+					</div>
+
+					<div class="input-container" id="event">
+						<label for="attendees">Estimated Number of Attendees:</label>
+						<span id="attendees"></span>
+					</div>
+			
+					<div class="input-container" id="event">
+						<label for="eventDate">Date of Event:</label>
+						<span id="eventDate"></span>
+					</div>
+				
+					<div class="input-container" id="event">
+						<label for="eventTime">Time of Event:</label>
+						<span id="eventTime"></span>
+					</div>
+
+				</div>
+				
+				<h2 class="underline">Contact Information</h2>
+				<br>
+				<div class="input-container">
+					<label for="lastName">Name:</label>
+					<span id="firstName"></span> <span id="lastName"></span>
+				</div>
+		
+				<div class="input-container">
+					<label for="contact">Contact Number:</label>
+					<span id="contact"></span>
+				</div>
+			
+				<div class="input-container">
+					<label for="email">Email Address:</label>
+					<span id="email"></span>
+				</div>
+		</div>
+
+		<div id="footer">
+			<h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+			<h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+			<hr>
+
+			<div id="footer-details">
+				<div id="footer-contact-container" class="footer-section-container">
+					<h2>GENERAL ENQUIRIES</h2>
+					<p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+					<p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CHECK IN / OUT</h2>
+					<p>Check in from: 10:00</p>
+					<p>Check out before 12:00</p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CONNECT WITH US</h2>
+					<div id="footer-socials-container">
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		function getFormDataFromURL() {
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+
+			if (urlParams.size !== 10) {
+				// not enough params or illegal amount, return back to forms
+				window.location.href = "./event_inquiry.html";
+			}
+
+			// Retrieve form data and update the content on the page
+			document.getElementById('eventType').innerText = urlParams.get('eventType');
+			document.getElementById('company').innerText = urlParams.get('company');
+			document.getElementById('eventName').innerText = urlParams.get('eventName');
+			document.getElementById('attendees').innerText = urlParams.get('attendees');
+			document.getElementById('eventDate').innerText = urlParams.get('eventDate');
+			document.getElementById('eventTime').innerText = urlParams.get('eventTime');
+			document.getElementById('firstName').innerText = urlParams.get('firstName');
+			document.getElementById('lastName').innerText = urlParams.get('lastName');
+			document.getElementById('contact').innerText = urlParams.get('contact');
+			document.getElementById('email').innerText = urlParams.get('email');
+		}
+		
+	window.onload = getFormDataFromURL;
+
+	</script>
+</html>

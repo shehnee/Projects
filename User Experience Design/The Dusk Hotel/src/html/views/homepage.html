@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>OVERVIEW | The Dusk Hotel </title>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+		<!-- <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> -->
+	  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+	  <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="../../css/includes/topbar.css">
+		<link rel="stylesheet" href="../../css/includes/footer.css">
+		<link rel="stylesheet" href="../../css/includes/tags.css">
+
+		<style>
+/* ROOT STYLES */
+:root {
+  --primary-color: #faf5e2; /* golden yellow */
+  --primary-compl-color: #bd9526; /* darker yellow, slightly more gold */
+  --secondary-color: #e0d7c7; /* khaki */
+  --secondary-compl-color: #f5f3ef; /* peach white */
+  --tertiary-color: #56453e; /* pruce */
+
+  --black-color: #211c1d;
+
+  /* fonts */
+
+  --primary-font-family: 'reforma-1918', serif;
+  --primary-font-family-bold: 'reforma-1918-bold', serif;
+  --secondary-font-family: 'Poppins', sans-serif;
+  --secondary-font-family-sbold: 'Poppins-SBOLD', sans-serif;
+  --secondary-font-family-bold: 'Poppins-BOLD', sans-serif;
+}
+/* font imports  */
+  @font-face {
+  font-family: 'Poppins';
+  src: url("../../static/fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: 'Poppins-SBOLD';
+  src: url("../../static/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: 'Poppins-BOLD';
+  src: url("../../static/fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: 'Reforma-1918';
+  src: url("../../static/fonts/reforma-1918-cufonfonts/Reformhover-underline-animation918-Blanca.otf");
+}
+@font-face {
+  font-family: 'Reforma-1918-BOLD';
+  src: url("../../static/fonts/reforma-1918-cufonfonts/Reformhover-underline-animation918-Negra.otf");
+}
+			
+/* html css */
+html {
+	width:100%;
+	place-items: center;
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	width: 100% ;
+	max-width: 100%;
+	background-color: var(--secondary-compl-color);
+	overscroll-behavior: none;
+	transition: 0.3s ease-out;
+	overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+  max-width:100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 900px) {
+	:root {
+		--page-horizontal-whitespace: 40px;
+	}
+
+  #flex-container {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  padding-top: 50px;
+	  padding-bottom: 50px;
+	  text-align: center;
+	}
+	div.text2 {
+	  margin: 0 auto;
+	}
+}
+
+@media only screen and (max-width: 620px) {
+	:root {
+		/* reduce topbar height */
+		--topbar-height: 64px;
+
+		/* reduce horizontal padding */
+		--page-horizontal-whitespace: 20px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	:root {
+		--page-horizontal-whitespace: 15px;
+	}
+}
+/* End of the Header's CSS */
+
+			/* Banner Section */
+			#banner {
+				position: relative;
+				width: 100%;
+				height: 100vh;
+				background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../static/homepage/pexels-bianca-jelezniac-8918652.jpg") no-repeat 50% 50%; 
+				background-size: cover;
+				background-attachment: fixed;
+				align-items: center;
+				justify-content: center;
+				display: flex;
+			} 
+				#text1 {
+					color: var(--primary-compl-color);
+					font-size: 3.5rem;
+					text-decoration: none;
+					text-transform: capitalize;
+					font-family: var(--primary-font-family-bold);
+					font-weight: bolder;
+					text-align: center;
+				}
+
+				/*Flex Box for contents*/
+				#flex-container {
+					height: 80vh;
+					display: flex;
+					align-items: center;
+					flex-wrap: nowrap;
+				}
+				.text2 {
+					flex: 1;
+					align-items: center;
+					flex-wrap: nowrap;
+					margin-left: 15%;
+					margin-right: 0;
+				}
+						div#flex-container h2 {
+						font-family: var(--primary-font-family);
+						font-weight: 200;
+						font-size: 2.5rem;
+					}
+						div#flex-container p {
+						font-family: var(--secondary-font-family);
+						font-size: 1.2rem;
+					}
+					.book-now-btn {
+						background-color: transparent; 
+						border: 2px solid var(--primary-compl-color); 
+						color: var(--primary-compl-color); 
+						padding: 12px 24px; 
+						text-align: center; 
+						text-decoration: none;
+						display: inline-block;
+						font-family: var(--secondary-font-family-sbold);
+						font-size: 16px; 
+						margin: 4px 2px; 
+						cursor: pointer; 
+
+						transition-duration: 150ms;
+					}
+					.book-now-btn:hover {
+						color: var(--primary-color);
+						background-color: var(--primary-compl-color);
+						/* transition: smooth 0.5ms; */
+
+						transition-duration: 190ms;
+					}
+
+				.details {
+					flex: 1;
+					text-align: left;
+					margin-left: 5%;
+					margin-right: 0%;
+				}
+						img.mailus {
+							width: 32px;
+							height: 32px;
+							vertical-align: middle;
+						}
+						img.mailus:hover {
+							color: var(--primary-compl-color);
+						}
+						.beside1 { 
+							margin-left: 1.5%;
+							text-decoration: none;
+							font-family: var(--secondary-font-family);
+							color: var(--black-color);
+						}
+						.beside1:hover {
+							color: var(--primary-compl-color);
+							text-decoration: underline;
+						}
+						img.callus {
+							width: 32px;
+							height: 32px;
+							vertical-align: middle;
+						}
+						img.callus:hover{
+							color: var(--primary-compl-color);
+						}
+						.beside2 { 
+							margin-left: 1.5%;
+							text-decoration: none;
+							font-family: "Poppins";
+							color: var(--black-color);
+						}
+						.beside2:hover {
+							color: var(--primary-compl-color);
+							text-decoration: underline;
+						}
+				#icon2 {
+					max-width: 250px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				#infos {
+				position: relative;
+				width: 100%;
+				height: 105vh;
+				background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../static/homepage/room1.jpg") no-repeat 50% 50%; 
+				background-size: cover;
+				background-attachment: fixed;
+				align-items: center;
+				justify-content: center;
+				display: inline-flex;
+				flex-wrap: nowrap;
+				text-align: center;
+				}
+				.norape {
+					flex-wrap: nowrap;
+				}
+					#infos h2 {
+						margin: 0;
+						font-family: var(--primary-font-family-bold);
+						font-size: 3rem;
+						color: var(--primary-color);
+					}
+					#infos p {
+						margin: 0;
+						font-family: var(--secondary-font-family);
+						font-size: 1.3rem;
+						color: var(--primary-color);
+					}
+					.spaceoutboi {
+						margin: 15px;
+					}
+					.book-now-btnn {
+						background-color: transparent; 
+						border: 2px solid var(--primary-color); 
+						color: var(--primary-color); 
+						padding: 12px 24px; 
+						text-align: center; 
+						text-decoration: none;
+						display: inline-block;
+						font-family: var(--secondary-font-family-sbold);
+						font-size: 16px; 
+						margin: 4px 2px; 
+						cursor: pointer; 
+					}
+					.book-now-btnn:hover {
+						color: var(--primary-compl-color);
+						background-color: var(--primary-color);
+						transition: smooth 0.5ms;
+					}
+/* Horizontal Scroll */
+div.container section:not(#sectionPin) {
+  min-height: 70vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 50px 10vw;
+  margin: auto;
+  place-items: center;
+}
+
+.container img {
+  height: 80vh;
+  width: auto;
+  object-fit: cover;
+}
+
+.container h1 {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: 10vw;
+  left: 10vw;
+  z-index: 4;
+  overflow-wrap: break-word;
+
+
+  @media (max-width: 768px) {
+	font-size: 16vw;
+  }
+
+}
+
+.container h2 {
+  font-size: 2rem;
+  font-family: var(--secondary-font-family-sbold);
+  max-width: 400px;
+}
+
+.container .credit {
+  font-family: var(--secondary-font-family-bold);
+  a {
+	color: var(--secondary-color);
+  }
+}
+
+#sectionPin {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  left: 0;
+  color: var(--secondary-color);
+  background: var(--tertiary-color);
+}
+
+.pin-wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 10vw;
+
+  & > * {
+	min-width: 60vw;
+	padding: 0 5vw;
+  }
+}
+
+.container p {
+  font-family: var(--secondary-font-family);
+  position: absolute;
+  bottom: 10vw;
+  right: 10vw;
+  width: 200px;
+  line-height: 1.5;
+}
+
+.facilities_parallax {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.facilities_parallax h2.ycu {
+	font-family: var(--secondary-font-family-sbold);
+	font-size: 1.8rem;
+	color: var(--primary-color);
+}
+.parallax1 {
+	background: url('https://storage.kempinski.com/cdn-cgi/image/w=960,f=auto,g=auto,fit=scale-down/ki-cms-prod/images/8/6/2/0/140268-1-eng-GB/d295bae1324e-73653121_4K.jpg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 177px 37px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	width: 100%;
+	height: 70vh;
+}
+.parallax2 {
+	background: url('https://www.marinabaysands.com/content/dam/revamp/hotel/banyan-tree-fitness-club/banyan-tree-fitness-club-masthead-d.v3.jpg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 177px 37px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	width: 100%;
+	height: 70vh;
+}
+.parallax3 {
+	background: url('https://cache.marriott.com/content/dam/marriott-renditions/SINJW/sinjw-garden-0029-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1336px:*') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 177px 37px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	width: 100%;
+	height: 70vh;
+}
+
+/* Cards Style */
+.popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.popular__card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.popular__content {
+  padding: 1rem;
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.popular__card__header h4 {
+  font-family: var(--primary-font-family-bold);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.popular__content p {
+  color: var(--text-light);
+  font-family: var(--secondary-font-family);
+}
+
+
+.section__container {
+  margin: auto;
+  padding: 0 1rem;
+}
+.section__header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--tertiary-color);
+  font-family: var(--primary-font-family-bold);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+
+
+.content2 {
+	height: 20vh;
+}
+
+
+/* Start of the Footer's CSS */
+footer .footer_container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: var(--secondary-compl-color);
+}
+
+.title2{
+  margin:auto;
+  font-size: 25px;
+  font-family: var(--primary-font-family-bold);
+  text-align: center;
+  letter-spacing: 1px;
+}
+.title3{
+  font-family: var(--secondary-font-family);
+  font-size:18px;
+  text-align: center;
+  margin:auto;
+}
+
+footer a {
+  /* font-family: var(--primary-font-family); */
+  /* second option ^ */
+  font-family: var(--secondary-font-family);
+  text-decoration: none;
+  transition: all .2s;
+  color: #000000;
+}
+
+footer a:hover {
+  color: var(--primary-compl-color);
+}
+
+footer h4 {
+  font-family: var(--primary-font-family-bold);
+  position: relative;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+footer h4::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -10px;
+background-color: var(--primary-compl-color);
+height: 2px;
+box-sizing: border-box;
+width: 50px;
+}
+
+footer ul {
+list-style:none;
+width:100%;
+padding:0;
+}
+
+footer ul li {
+line-height: 1.8em;
+}
+
+.thedusk, .quicklinks, .hotel-reservations, .restaurant-reservations {
+margin-bottom: 32px;
+}
+
+footer .social-links a {
+display: inline-block;
+height: 40px;
+width: 40px;
+background-color: var(--primary-compl-color);
+margin-right: 10px;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: var(--primary-color);
+transition: all 0.2s;
+}
+
+footer .social-links a:hover {
+color: var(--tertiary-color);
+background-color: var(--primary-color);
+}
+
+form.subscribe input {
+height: 35px;
+width: 220px;
+margin: 8px 0px;
+border: none;
+outline: none;
+padding: 6px;
+font-size: 14px;
+}
+
+form.subscribe .btn {
+height: 35px;
+background: var(--primary-compl-color);
+border: none;
+padding: 0px 6px;
+margin: 8px 0px;
+font-weight: 600;
+cursor: pointer;
+color: #FFFFFF;
+}
+
+/* Subscribe */
+#subscribe .subscribe_container {
+padding-top: 24px;
+padding-bottom: 24px;
+padding-left: 24px;
+padding-right: 24px;
+background-color: var(--secondary-compl-color);
+border-top: 2px solid #ffffff;
+text-align: center;
+}
+#subscribe h2 {
+font-family: var(--primary-font-family-bold);
+}
+#subscribe p {
+font-family: var(--secondary-font-family);
+}
+
+form.subscribe input {
+height: 35px;
+width: 220px;
+margin: 8px 0px;
+border: none;
+outline: none;
+padding: 6px;
+font-size: 14px;
+}
+
+form.subscribe .btn {
+height: 35px;
+background: var(--primary-compl-color);
+border: none;
+padding: 0px 6px;
+margin: 8px 0px;
+font-weight: 600;
+cursor: pointer;
+color: #FFFFFF;
+}
+
+/* responsiveness below */
+
+/* desktop */
+@media only screen and (min-width:900px) {
+
+	#flex-container {
+	  display: flex;
+	  justify-content: space-around;
+	}
+
+	footer .footer_container {
+	display: flex;
+	width:100%;
+	justify-content: space-around;
+  }
+
+}
+
+@media only screen and (max-width:500px) {
+  
+	#flex-container {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  padding-top: 50px;
+	  padding-bottom: 50px;
+	  text-align: center;
+	}
+	div.text2 {
+	  margin: 0 auto;
+	}
+	/* .beside1 {
+	  
+	} */
+
+}
+
+	  /* End of CSS */  
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar-container">
+			<a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+			<div id="topbar-right-container">
+				<button id="topbar-member-login-btn" type="button">
+					<img src="../../static/account_icon.svg">
+					Member sign in
+				</button>
+				<a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+					BOOK NOW
+				</a>
+				<button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+				</button>
+			</div>
+			<div id="navigation-outer-darken"></div>
+			<div id="navigation-container">
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">ROOMS</button>
+					<div class="navigation-section-element">
+						<a href="./room_landing_page.html">ROOMS</a>
+						<a href="./suite_landing_page.html">SUITES</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">DINING</button>
+					<div class="navigation-section-element">
+						<a href="./restaurants.html">DAWN</a>
+						<a href="./reservations.html">RESERVATIONS</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">EVENTS</button>
+					<div class="navigation-section-element">
+						<a href="./event_venue.html">VENUE</a>
+						<a href="./event_wedding.html">WEDDING</a>
+						<a href="./event_corporate.html">CORPORATE</a>
+						<a href="./event_inquiry.html">INQUIRY</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">FACILITIES</button>
+					<div class="navigation-section-element">
+						<a href="./facilities.html">FACILITIES</a>
+						<a href="./facilities_booking.html">BOOKING</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">OTHERS</button>
+					<div class="navigation-section-element">
+						<a href="./promotions.html">PROMOTIONS</a>
+						<a href="./contact_us.html">CONTACT US</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+<div class="not_container" data-scroll data-scroll-speed="1">
+		<section id="banner">
+			<h2 id="text1">the embodiment <br>of calm luxury</h2>
+		</section>
+
+		<div id="flex-container">
+			<div class="text2">
+				<h2>The Dusk Hotel Singapore</h2>
+				<p>
+					Induldge yourselves in a place that brings you
+					<br>
+					rest in comfort, luxury, and calm. 
+					<br>
+					Simply nowhere else in  
+					<br>
+					the world like that
+				</p>
+				<a class="book-now-btn" href="./room_booking.html">Book Now</a>
+			</div>
+			<div class="details">  
+			<img src="../../static/icon.svg" alt="The Dusk Hotel" id="icon2">
+				<br>  
+			<a href="mailto: grapcubes@gmail.com"><img src="../../static/mail_icon.svg" alt="Mail Us" class="mailus"></a>
+			<a href="mailto: grapcubes@gmail.com" class="beside1">reservation@thedusk.com</a>
+			<br>
+			<a href="tel:+6592224896"><img src="../../static/phone_icon.svg" alt="Call Us" class="callus"></a>
+			<a href="tel:+6592224896" class="beside2">+65 6798 8789</a>
+		</div>
+	</div>
+	<div id="infos" data-scroll-speed="1" data-scroll="1">
+		<div class="norape">
+			<h2>
+				Rooms &amp; Suites
+			</h2>
+			<p>
+				Specially curated and cleaned to give you the best
+				<br>
+				rest you need for your stay with The Dusk.
+				<br>
+				Make yourselves feel like home 
+				<br>
+				with The Dusk's suites.
+			</p>
+			<div class="spaceoutboi">
+				<a class="book-now-btnn" href="./room_booking.html">Book Now</a>
+			</div>
+		</div>
+	</div>
+
+
+<div class="container">
+		<section data-textcolor="var(--tertiary-color)">
+		  <div>
+			<h1 data-scroll data-scroll-speed="1" style="font-family: var(--primary-font-family);">Restaurants at The Dusk</h1>
+			<p data-scroll data-scroll-speed="2" data-scroll-delay="0.2">Dine with the Dusk</p>
+		  </div>
+	
+		</section>
+	
+		<section id="sectionPin">
+		  <div class="pin-wrap">
+			<h2>Embark on a Culinary Odyssey: <br>The Gourmet Euphoria Awaits!</h2>
+			<img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1" alt="" class="img1">
+			  <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1" alt="" class="img1">
+			  <img src="https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg?auto=compress&cs=tinysrgb&w=900&&dpr=1" alt="" class="img1">
+	
+		  </div>
+		</section>
+		<section data-bgcolor="#e3857a" data-textcolor="#f1dba7"><img src="https://images.pexels.com/photos/2102934/pexels-photo-2102934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+		  <h2 data-scroll data-scroll-speed="1" class="credit">By Alvin Leung</h2>
+		</section>
+	  </div>
+			
+	<div class="another_container">
+		<section class="facilities_parallax">
+			<h2 class="section__header">Facilities to enjoy</h2>    
+			<div>
+				
+				<div class="facilities_parallax">
+					<div class="parallax1" data-scroll><h2 class="ycu" data-scroll data-scroll-delay="0.1">SPA</h2></div>
+					<div class="parallax2" data-scroll><h2 class="ycu" data-scroll data-scroll-delay="0.1">GYM</h2></div>
+					<div class="parallax3" data-scroll><h2 class="ycu" data-scroll data-scroll-delay="0.1">SWIMMING POOL</h2></div>
+				</div>
+			</div>
+		</section>  
+	   
+
+	<section class="section__container" data-scroll data-scroll-speed="1" data-scroll-delay="0.1">
+		<h2 class="section__header">events for you</h2>
+		<div class="popular__grid">
+		  <div class="popular__card">
+			<img src="../../static/homepage/venue.jpg" alt="weddings" />
+			<div class="popular__content">
+			  <div class="popular__card__header">
+				<h4>Venues</h4>
+			  </div>
+			  <p>Plan your next event with us in our exclusive venues, tailored based on your event needs.</p>
+			</div>
+		  </div>
+		  <div class="popular__card">
+			<img src="../../static/homepage/weddings.jpg" alt="events" />
+			<div class="popular__content">
+			  <div class="popular__card__header">
+				<h4>Weddings</h4>
+			  </div>
+			  <p>Where we make your dreams come true. Celebrate life's special moments in fashionable and memorable style.</p>
+			</div>
+		  </div>
+		  <div class="popular__card">
+			<img src="../../static/homepage/corporate.png" alt="events" />
+			<div class="popular__content">
+			  <div class="popular__card__header">
+				<h4>Corporate Events</h4>
+			  </div>
+			  <p>Setting the stage for success. Transform your corporate events into memorable milestones. </p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+  </div>
+  
+  <div class="content2"></div>
+
+  <!-- footer -->
+  <div id="footer">
+	<h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+	<h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+	<hr>
+
+	<div id="footer-details">
+		<div id="footer-contact-container" class="footer-section-container">
+			<h2>GENERAL ENQUIRIES</h2>
+			<p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+			<p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+		</div>
+		<div class="footer-section-container">
+			<h2>CHECK IN / OUT</h2>
+			<p>Check in from: 10:00</p>
+			<p>Check out before 12:00</p>
+		</div>
+		<div class="footer-section-container">
+			<h2>CONNECT WITH US</h2>
+			<div id="footer-socials-container">
+				<div class="footer-socials-hover-grow-container">
+					<a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+				</div>
+				<div class="footer-socials-hover-grow-container">
+					<a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+				</div>
+				<div class="footer-socials-hover-grow-container">
+					<a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = document.querySelector(".container");
+  const notContainer = document.querySelector(".not_container");
+
+  const horizontalScroll = new LocomotiveScroll({
+	el: container,
+	smooth: false // Disable smooth scrolling for the container
+  });
+
+  const smoothScroll = new LocomotiveScroll({
+	el: notContainer,
+	smooth: true // Enable smooth scrolling for the not_container
+  });
+
+  // Update ScrollTrigger when either scroll happens
+  horizontalScroll.on("scroll", ScrollTrigger.update);
+  smoothScroll.on("scroll", ScrollTrigger.update);
+
+  // Create the scroller proxies
+  ScrollTrigger.scrollerProxy(container, {
+	scrollTop(value) {
+	  return arguments.length
+		? horizontalScroll.scrollTo(value, 0, 0)
+		: horizontalScroll.scroll.instance.scroll.y;
+	},
+	getBoundingClientRect() {
+	  return {
+		left: 0,
+		top: 0,
+		width: window.innerWidth,
+		height: window.innerHeight
+	  };
+	},
+	pinType: container.style.transform ? "transform" : "fixed"
+  });
+
+  ScrollTrigger.scrollerProxy(notContainer, {
+	scrollTop(value) {
+	  return arguments.length
+		? smoothScroll.scrollTo(value, 0, 0)
+		: smoothScroll.scroll.instance.scroll.y;
+	},
+	getBoundingClientRect() {
+	  return {
+		left: 0,
+		top: 0,
+		width: window.innerWidth,
+		height: window.innerHeight
+	  };
+	},
+	pinType: notContainer.style.transform ? "transform" : "fixed"
+  });
+
+  ////////////////////////////////////
+  ////////////////////////////////////
+  window.addEventListener("load", function () {
+	let pinWrap = document.querySelector(".pin-wrap");
+	let pinWrapWidth = pinWrap.offsetWidth;
+	let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+
+	// Pinning and horizontal scrolling
+	gsap.to(".pin-wrap", {
+	  scrollTrigger: {
+		scroller: container, // Use the horizontalScroll for pinning
+		scrub: true,
+		trigger: "#sectionPin",
+		pin: true,
+		start: "top top",
+		end: pinWrapWidth
+	  },
+	  x: -horizontalScrollLength,
+	  ease: "none"
+	});
+
+	ScrollTrigger.addEventListener("refresh", () => horizontalScroll.update());
+	ScrollTrigger.refresh();
+  });
+</script>
+  <!--JS FOR SMOOTHSCROLL ENDS HERE-->
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+

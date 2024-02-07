@@ -1,0 +1,310 @@
+body{
+	margin:0;
+	width: 95;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+/* IMAGE + HEADER */
+
+#header-viewport-container {
+	position: relative;
+	width: 100%;
+	height: 450px;
+	margin:0;
+
+	background-image: url("../../static/rooms/classicbedroom.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#image-darken-overlay {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+	
+	backdrop-filter: brightness(65%);
+
+	z-index: 1;
+}
+
+#header-viewport-container > h1 {
+	z-index: 2;
+}
+
+
+#center {
+	margin:0 auto;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	/* first value -50% , element move to the left*/
+	/* second value -50%, element move upwards */
+	transform: translate(-50%, -50%);
+	text-shadow: 1px 1px 1px #333;
+	
+
+	font-size: 60px;
+	color:white;
+	font-weight: bold;
+}
+
+#center > p {
+	text-align: center;
+	margin: 0;
+}
+
+
+#selector-container{
+	/* min-content, width of element will be adjusted to fit content inside it */
+	width: min-content;
+	padding: 0 20px;
+	margin: 0 auto;
+	display: flex;
+	
+}
+
+/* TEXT */
+
+p.header{
+	margin:0;
+}
+
+.text{
+   font-size:20px;
+   text-align: center;
+	
+   font-weight: lighter;
+   margin-top: 50px;
+	
+}
+
+
+
+/* NAV BUTTONS FOR ROOMS AND SUITES */
+
+
+.bignavbtn {
+	all: unset;
+	
+	font-size: 1.75rem;
+	letter-spacing: .02em;
+	width: auto;
+	padding: 20px 25px 5px;
+	font-weight: 400;
+	border:0;
+	color:rgb(44, 40, 40);
+
+	cursor: pointer;
+
+	transition-duration: 145ms;
+}
+
+.bignavbtn:focus,
+.bignavbtn:hover {
+	color: var(--primary-compl-color);
+}
+
+.bignavbtn > a {
+	text-decoration: none;
+	color: inherit;
+	
+}
+#stylehr{
+	width:140px;
+	padding:0.7px;
+	background-color: var(--primary-compl-color);
+	border-color: var(--primary-compl-color);
+}
+
+/* ROOM AND SUITE LAYOUT */
+
+#background-color{
+	display:flex;
+	flex-wrap: wrap;
+	background-color: var(--secondary-compl-color);
+	
+}
+
+.firsthalf{
+	flex:50%;
+	margin:0;
+}
+.secondhalf{
+	flex:50%;
+	height: 100%;
+	letter-spacing: 1px;
+	font-size: 35px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.heading{
+	margin:0px;
+}
+
+
+.stylehr2{
+	width:80px;
+}
+
+.stylehr3{
+	width:150px;
+}
+
+.roomdetails{ 
+	display: flex;
+ 
+}
+
+.roomdetails > .firsthalf {
+	flex-grow: .4;
+}
+
+.roomhalf2{ 
+	margin-left: 10%;
+	flex-grow: .7;
+	font-size: 17px;
+}
+
+.firsthalf > img {
+	height: 100%;
+	width: 100%;
+}
+
+
+.details{ 
+	font-size:17px;
+	letter-spacing: 0;
+	text-align: left;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 9%;
+	
+   
+}
+
+.para{
+	font-size: 17px;
+	letter-spacing: 0;
+	text-align: left;
+	margin-top: 13%;
+	margin-left: 9%;
+}
+
+.list{
+	font-size: 17px;
+	letter-spacing: 0;
+	text-align: left;
+	margin-left: 9%;
+}
+
+.prices{ 
+   letter-spacing: 0;
+   text-align: left;
+   margin-top:auto;
+   margin-bottom: auto;
+}
+
+.prices1{
+	text-align: left;
+	font-size: 32px;
+	font-weight: bold;
+	margin-top:auto;
+	margin-bottom: auto;
+}
+.night{
+	text-align: left;
+	font-size: 17px;
+	letter-spacing: 0;
+}
+
+.ratings{
+	width: 144px;
+	height: 20px;
+	text-align: left;
+	letter-spacing: 0;
+  
+	margin-bottom: auto;
+	
+}
+.stars{
+	color:orange;
+	margin: 0px;
+	text-align: left;
+}
+
+
+.review{
+	color: black;
+	font-size: 13px;
+}
+
+
+/* BUTTONS TO VIEW MORE AND CHECK AVAILBILITY*/
+
+
+.interactivebtn {
+	font-family: 'Times New Roman', Times, serif;
+	text-align: center;
+	font-size: 13px;
+	
+	width: auto;
+
+	padding: 20px 10px;
+	text-align: left;
+	margin-bottom: 20px;
+	border: 1px solid var(--black-color);
+	background-color: var(--secondary-compl-color);
+
+	font-weight: 400;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+
+	white-space: nowrap;
+
+	transition-property: background-color;
+	transition-duration: 150ms;
+	transition-timing-function: ease-in;
+}
+
+.interactivebtn:hover,
+.interactivebtn:target {
+	background-color: red;
+	background-color: var(--primary-compl-color);
+}
+
+
+/* DESKTOP VIEW */
+
+@media screen and (max-width: 992px){
+	#center {
+		top: 50%;
+		/* element's width will be full width of 'header-viewport-container' - 60px */
+		width: calc(100% - 60px);
+		padding: 0 30px;
+	}
+
+	#center > p {
+		text-align: center;
+	}
+	#center > .text {
+		margin: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	.firsthalf{
+		flex: 100%;
+
+	}
+	.secondhalf{
+		flex: 100%;
+		padding: 10px;
+	}
+
+	.firsthalf > img {
+		width: 100%;
+	}
+}

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10.0, minimum-scale=1, user-scalable=yes"/>
+		<meta name="description" content=":)"/>
+
+		<link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+		<link rel="stylesheet" href="../../css/includes/reset.css">
+		<link rel="stylesheet" href="../../css/includes/topbar.css">
+		<link rel="stylesheet" href="../../css/includes/footer.css">
+		<link rel="stylesheet" href="../../css/includes/tags.css">
+		<link rel="stylesheet" href="../../css/views/promotions.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+		<title>The Dusk Hotel | Promotions</title>
+	</head>
+	<body>
+		<div id="topbar-container">
+			<a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+			<div id="topbar-right-container">
+				<button id="topbar-member-login-btn" type="button">
+					<img src="../../static/account_icon.svg">
+					Member sign in
+				</button>
+				<a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+					BOOK NOW
+				</a>
+				<button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+				</button>
+			</div>
+			<div id="navigation-outer-darken"></div>
+			<div id="navigation-container">
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">ROOMS</button>
+					<div class="navigation-section-element">
+						<a href="./room_landing_page.html">ROOMS</a>
+						<a href="./suite_landing_page.html">SUITES</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">DINING</button>
+					<div class="navigation-section-element">
+						<a href="./restaurants.html">DAWN</a>
+						<a href="./reservations.html">RESERVATIONS</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">EVENTS</button>
+					<div class="navigation-section-element">
+						<a href="./event_venue.html">VENUE</a>
+						<a href="./event_wedding.html">WEDDING</a>
+						<a href="./event_corporate.html">CORPORATE</a>
+						<a href="./event_inquiry.html">INQUIRY</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">FACILITIES</button>
+					<div class="navigation-section-element">
+						<a href="./facilities.html">FACILITIES</a>
+						<a href="./facilities_booking.html">BOOKING</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">OTHERS</button>
+					<div class="navigation-section-element">
+						<a href="./promotions.html">PROMOTIONS</a>
+						<a href="./contact_us.html">CONTACT US</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="frontpage-container">
+			<div id="carousel-container">
+			</div>
+			<div id="greeter-container">
+				<h1 id="page-header">PROMOTIONS</h1>
+				<p id="page-caption">Ever changing promotions all year round. View the latest promotions ongoing.</p>
+
+				<div id="content-searchbar">
+					<label for="promo-content-search">Search by keyword</label>
+					<div id="content-searchbar-input-container">
+						<input id="content-searchbar-input-query" name="promo-content-search" type="text">
+						<!-- <input id="content-searchbar-filter-date" name="promo-content-date" type="date"> -->
+						<select id="content-searchbar-filter-category" name="promo-content-category">
+							<option value="all">All</option>
+							<option value="dining">Dining</option>
+							<option value="accommodation">Accommodation</option>
+							<option value="events">Events</option>
+							<option value="wedding">Wedding</option>
+						</select>
+						<button id="content-searchbar-enterbtn" type="button">Enter</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav id="greeter-anchorjump">
+			<p><a href="#dining">Dining</a> | <a href="#accommodation">Accommodation</a> |  <a href="#events">Events</a> | <a href="#wedding">Wedding</a></p>
+		</nav>
+		<div id="content-container">
+			<section class="section-container" id="dining">
+				<div class="section-header-container">
+					<h2>Dining</h2>
+				</div>
+				<div class="section-content-container">
+					<p>Have a go at our finely-curated asian culinary dishes</p>
+					<div class="promo-card-grid-container"></div>
+				</div>
+			</section>
+			<section class="section-container" id="accommodation">
+				<div class="section-header-container">
+					<h2>Accommodation</h2>
+				</div>
+				<div class="section-content-container">
+					<p>Cozy yet luxurious room stays</p>
+					<div class="promo-card-grid-container"></div>
+				</div>
+			</section>
+			<section class="section-container" id="events">
+				<div class="section-header-container">
+					<h2>Events</h2>
+				</div>
+				<div class="section-content-container">
+					<p>Dont' miss out on our exclusive event promotions</p>
+					<div class="promo-card-grid-container"></div>
+				</div>
+			</section>
+			<section class="section-container" id="wedding">
+				<div class="section-header-container">
+					<h2>Wedding</h2>
+				</div>
+				<div class="section-content-container">
+					<p>Cherish your special day with our wedding promotions</p>
+					<div class="promo-card-grid-container"></div>
+				</div>
+			</section>
+		</div>
+
+		<div id="footer">
+			<h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+			<h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+			<hr>
+
+			<div id="footer-details">
+				<div id="footer-contact-container" class="footer-section-container">
+					<h2>GENERAL ENQUIRIES</h2>
+					<p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+					<p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CHECK IN / OUT</h2>
+					<p>Check in from: 10:00</p>
+					<p>Check out before 12:00</p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CONNECT WITH US</h2>
+					<div id="footer-socials-container">
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal-window" class="hidden">
+			<div id="modal-container">
+				<div id="modal-content-thumbnail">
+				</div>
+				<div id="modal-content">
+					<div id="modal-content-left">
+						<h2 id="modal-content-header"></h2>
+						<div id="modal-content-description">
+							<p id="modal-content-desciption-p"></p>
+						</div>
+					</div>
+					<div id="modal-content-right">
+						<div id="modal-content-details">
+							<p id="modal-content-details-promo-date">14/02/2023 - 21/02/2023</p>
+						</div>
+						<button id="modal-content-close-btn">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- CREDITS
+			https://svgsilh.com/image/37726.html
+		-->
+	</body>
+	<script>
+		// promotions entry
+		const promotionsDataByCateg = [
+			["2023HT2NDP20OFF", "FDFOOD", "FDTREATS"], // DINING
+			["UOB10OFF", "BM10OFF", "FDROOM"], // ACCOMMODATION
+			["AMEX10OFF", "FIRSTMICE", "PBSALE"], // EVENTS
+			["XIJIU", "HNMPCK", "PWDPCK"] // WEDDING
+		]
+		const promotionsDataConds = {
+			"WSL": "While stocks last",
+			"MEO": "Members exclusive only",
+			"TCA": "Terms & conds. apply",
+			"LTSS": "Limited to selected suites"
+		}
+		const promotionsData = {
+			"2023HT2NDP20OFF": {
+				name: "20% Off 2nd Pax for High Tea",
+				description: "2nd pax dine at a discounted price of 65.90+ (<i>U.P. 82.75+</i>)\nLimited to only one 2nd pax for a table",
+				date: "14/05/23 - 21/05/23",
+				thumbnail: "https://www.panpacific.com/content/dam/pphg-revamp/en/global/countries/singapore/teacation-relaxation/tea-cation-prsmb.jpg",
+				conds: [
+					"WSL", "MEO", "TCA"
+				]
+			},
+			"UOB10OFF": {
+				name: "10% Off Suites w/ UOB Card",
+				description: "10% off for suites rooms when you pay with UOB card",
+				date: "01/01/23 - 01/06/23",
+				thumbnail: "../../static/promos/uob.png",
+				conds: [
+					"LTSS", "TCA"
+				]
+			},
+			"BM10OFF": {
+				name: "10% Off Rooms on Your Birthday Month",
+				description: "10% off for one classic rooms on your birthday month.\nLimited to a maximum of 5 nights stay.",
+				date: "01/01/2023 - 31/12/2024",
+				thumbnail: "../../static/promos/birthday.png",
+				conds: [
+					"MEO", "TCA"
+				]
+			},
+			"FDROOM": {
+				name: "8% Off Rooms This Father's Day",
+				description: "8% off your final receipt price for any room bookings of your choice.",
+				date: "01/07/2023 - 31/07/2023",
+				thumbnail: "https://www.panpacific.com/content/dam/pphg-revamp/en/global/countries/singapore/teacation-relaxation/tea-cation-prsmb.jpg",
+				conds: [
+					"TCA"
+				]
+			},
+			"FDFOOD": {
+				name: "8% Off Dining This Father's Day",
+				description: "8% off your final receipt price for any dine-ins of your choice.",
+				date: "01/07/2023 - 31/07/2023",
+				thumbnail: "../../static/promos/fathersday.png",
+				conds: [
+					"TCA"
+				]
+			},
+			"FDTREATS": {
+				name: "Free Goodie Bag This Father's Day",
+				description: "Get a free goodie bags worth up to SGD50++ of treats upon completion of any dining reservations.\nClaimable for every male pax who comes in with a child.",
+				date: "01/07/2023 - 18/07/2023",
+				thumbnail: "../../static/promos/goodiefatherday.png",
+				conds: [
+					"TCA", "WSL", "MEO"
+				]
+			},
+			"AMEX10OFF": {
+				name: "10% Off Bill",
+				description: "10% off meetings and venues reservation fees when you complete the transaction with a corporate AMEX card.",
+				thumbnail: "https://www.panpacific.com/content/dam/pphg-revamp/en/global/countries/singapore/teacation-relaxation/tea-cation-prsmb.jpg",
+				conds: [
+					"TCA"
+				]
+			},
+			"FIRSTMICE": {
+				name: "5% Off Virtual Conference",
+				description: "First time clients hosting a semi-large virtual meeting will be granted a 5% discount as a small token of appreciation.\nMeeting attendees must exceed 50 guests.",
+				date: "01/08/2023 - 01/08/2024",
+				thumbnail: "https://www.panpacific.com/content/dam/pphg-revamp/en/global/countries/singapore/teacation-relaxation/tea-cation-prsmb.jpg",
+				conds: [
+					"TCA", "MEO"
+				]
+			},
+			"XIJIU": {
+				name: "Free Gift Hamper",
+				description: "A free hamper consisting of SGD300++ worth of gifts will be gifted to members who hold weddings here.\nSimply obtain the membership details during booking.",
+				date: "01/08/2023 - 01/08/2024",
+				thumbnail: "../../static/promos/gifthamper.png",
+				conds: [
+					"TCA", "MEO"
+				]
+			},
+			"HNMPCK": {
+				name: "Honeymoon Package",
+				description: "Sign up for this elusive package for an additional SGD2,989 for a fully planned out honeymoon to the Bahamas beach.",
+				date: "01/08/2023 - 01/08/2024",
+				thumbnail: "https://villabukitpancawati.com/wp-content/uploads/2017/12/DSC_2323.jpg",
+				conds: [
+					"TCA", "WSL"
+				]
+			},
+			"PWDPCK": {
+				name: "Pre-wedding Party",
+				description: "Add on a pre-wedding party for an additional SGD60 per pax.",
+				date: "01/08/2023 - 01/08/2024",
+				thumbnail: "https://weddingknowhow.com/wp-content/uploads/2020/03/pre-wedding-parties.jpg",
+				conds: [
+					"TCA"
+				]
+			},
+			"PBSALE": {
+				name: "Early Booking Promotion",
+				description: "Complete your booking transaction before the first quarter of the month to enjoy a 5% discount.",
+				date: "01/08/2023 - 08/08/2023",
+				thumbnail: "https://blog.amazing-mexico.com/wp-content/uploads/2018/03/Book-Early-1.jpg",
+				conds: [
+					"TCA"
+				]
+			}
+		}
+
+		// references
+		var modalWindow = document.getElementById("modal-window")
+
+		// modal object
+		const modal = {
+			window: modalWindow,
+			container: document.getElementById("modal-container"),
+
+			thumbnail: document.getElementById("modal-content-thumbnail"),
+			header: document.getElementById("modal-content-header"),
+			description: document.getElementById("modal-content-desciption-p"),
+			date: document.getElementById("modal-content-details-promo-date"),
+
+			conditionsElementContainer: document.getElementById("modal-content-details"),
+			conditionsElements: [], // append conditions tags here
+		}
+
+		modal.toggleOpen = function(open) {
+			// open: boolean
+			if (open) {
+				modalWindow.classList.remove("hidden")
+			} else {
+				modalWindow.classList.add("hidden")
+			}
+		}
+
+		modal.loadDescription = function(id) {
+			// returns true if loading was successful
+			var data = promotionsData[id]
+			if (data == null) {
+				// no matching ids
+				return false
+			}
+
+			// load title
+			this.header.innerHTML = data.name
+			this.description.innerHTML = data.description.replaceAll("\n", "<br>")
+
+			// load thumbnail
+			this.thumbnail.style.backgroundImage = `url(${data.thumbnail})`
+
+			// load timing
+			this.date.innerHTML = data.date
+
+			// clear previous conditions
+			for (let i = 0; i < this.conditionsElements.length; i++) {
+				this.conditionsElements[i].remove();
+			}
+
+			// set to empty array
+			this.conditionsElements = [];
+
+			// load in new conditions
+			for (let i = 0; i < data.conds.length; i++) {
+				var spec = document.createElement("p")
+				spec.className = "modal-content-details-promo-tc"
+				spec.innerHTML = promotionsDataConds[data.conds[i]]
+
+				// append to DOM
+				this.conditionsElementContainer.appendChild(spec)
+
+				// add references
+				this.conditionsElements.push(spec)
+			}
+
+			// return true
+			return true
+		}
+		
+		// master controller
+		const controller = {
+			sectionContainers: [
+				document.getElementById("dining").getElementsByClassName("promo-card-grid-container")[0],
+				document.getElementById("accommodation").getElementsByClassName("promo-card-grid-container")[0],
+				document.getElementById("events").getElementsByClassName("promo-card-grid-container")[0],
+				document.getElementById("wedding").getElementsByClassName("promo-card-grid-container")[0],
+			],
+
+			cards: []
+		}
+
+		controller.newCard = function(container, promocode) {
+			// creates and returns a new card (div) element
+			// with populated details obtained from the promocode
+			var promodata = promotionsData[promocode];
+
+			// construct new promo card element
+			var bigcontainer = document.createElement("div")
+			bigcontainer.classList.add("promo-card")
+
+			var topcontainer = document.createElement("div")
+			topcontainer.classList.add("promo-card-top-container")
+			bigcontainer.appendChild(topcontainer)
+
+			var thumbnail = document.createElement("div")
+			thumbnail.classList.add("promo-card-thumbnail")
+			thumbnail.style.backgroundImage = `url(${promodata.thumbnail})`
+			topcontainer.appendChild(thumbnail)
+
+			var specscontainer = document.createElement("div")
+			specscontainer.classList.add("promo-card-specs-container")
+			topcontainer.appendChild(specscontainer)
+
+			// add specs (date first then any conds they have)
+			var datespec = document.createElement("p")
+			datespec.className = "promo-card-specs-date"
+			datespec.innerHTML = promodata.date
+			specscontainer.appendChild(datespec)
+			for (let k = 0; k < promodata.conds.length; k++) {
+				var spec = document.createElement("p")
+				spec.className = "promo-card-specs-tc"
+				spec.innerHTML = promotionsDataConds[promodata.conds[k]]
+				specscontainer.appendChild(spec)
+			}
+
+			var detailscontainer = document.createElement("div")
+			detailscontainer.classList.add("promo-card-details")
+			bigcontainer.appendChild(detailscontainer)
+
+			var detailsheading = document.createElement("h3")
+			detailsheading.innerHTML = promodata.name
+			var viewmorebtn = document.createElement("button")
+			viewmorebtn.id = promocode
+			viewmorebtn.classList.add("promo-card-view-more-btn")
+			viewmorebtn.innerHTML = "VIEW MORE"
+
+			detailscontainer.appendChild(detailsheading)
+			detailscontainer.appendChild(viewmorebtn)
+
+			// register click events
+			viewmorebtn.addEventListener("click", e => {
+				e.stopPropagation() // stop bubbling
+
+				if (modal.loadDescription(promocode)) {
+					modal.toggleOpen(true)
+				}
+			})
+
+			// add it to container
+			container.appendChild(bigcontainer)
+
+			// return element
+			return bigcontainer
+		}
+
+		controller.rebuildCards = function(searchParams) {
+			// searchParams: {query: str, category: number?}?
+			// build cards based on search params if no simply list them all
+			// handles all the visual aspects (i.e. updating, order)
+			// promo cards population & registering of clicks
+			// return true upon successful query along with the firstValidSection (-1 if no query applied; to be used as a jumpTo value)
+
+			// rebuild cards
+			var firstValidSection = -1;
+			for (let i = 0; i < 4; i++) {
+				// category pointer
+				var promos = promotionsDataByCateg[i]
+				var container = this.sectionContainers[i]
+
+				var isValidSearch = false;
+				if (searchParams && searchParams.category && typeof searchParams.category === "number") {
+					isValidSearch = searchParams.category === -1 || searchParams.category === i; // -1 to search within all categories
+				}
+
+				var searchActor, ignoredActor; // ignoredActor for uninterested results
+				if (searchParams && isValidSearch && searchParams.query) {
+					var searchQuery = searchParams.query.toLowerCase()
+					searchActor = promos.map(promoCode => [promoCode, promotionsData[promoCode].name.toLowerCase()])
+					ignoredActor = [];
+
+					searchActor = searchActor.filter(pack => {
+						var interested = pack[1].includes(searchQuery); // only perform sorting on interested elements
+						if (interested) {
+							return true
+						} else {
+							// add it to uninterested list
+							ignoredActor.push(pack)
+							return false
+						}
+					}).sort((a, b) => {
+						console.log(a[1])
+						var i = a[1].indexOf(searchQuery)
+						var j = b[1].indexOf(searchQuery)
+						if (i > j) {
+							// j comes before i
+							return 1
+						} else if (i < j) {
+							// j comes after i
+							return -1
+						} else {
+							// same position, maintain RELATIVE positions
+							return 0
+						}
+					})
+				}
+
+				if (isValidSearch) {
+					// there is query present
+
+					// clear cards first
+					container.innerHTML = "";
+
+					// first build the search results first
+					for (let j = 0; j < searchActor.length; j++) {
+						this.newCard(container, searchActor[j][0]); // index 0 for the promocode, index 1 for the name field
+					}
+
+					// build the uninterested ones
+					for (let j = 0; j < ignoredActor.length; j++) {
+						var card = this.newCard(container, ignoredActor[j][0])
+						card.classList.add("filtered-out")
+					}
+
+					// determine whether this is the earliest section
+					if (firstValidSection === -1 && searchActor.length > 0) {
+						firstValidSection = i;
+					}
+				} else {
+					for (let j = 0; j < promos.length; j++) {
+						let promocode = promos[j]
+						this.newCard(container, promocode)
+					}
+				}
+			}
+
+			return [true, firstValidSection];
+		}
+
+		// promo card view more
+		var promoTriggerBtns = document.getElementsByClassName("promo-card-view-more-btn")
+		for (let i = 0; i < promoTriggerBtns.length; i++) {
+			var ele = promoTriggerBtns[i]
+			ele.addEventListener("click", e => {
+				console.log("LOADING WITH ID", e.target.id)
+				if (modal.loadDescription(e.target.id)) {
+					modal.toggleOpen(true)
+				}
+			})
+		}
+
+		// search function
+		var searchInputField = document.getElementById("content-searchbar-input-query")
+		var searchInputCategField = document.getElementById("content-searchbar-filter-category")
+		var searchEnterBtn = document.getElementById("content-searchbar-enterbtn")
+		searchEnterBtn.addEventListener("click", e => {
+			var inp = searchInputField.value;
+			if (inp.length === 0) {
+				return; // do nothing
+			}
+
+			var categ = -1;
+			var categVal = searchInputCategField.value;
+			if (categVal !== "all") {
+				// other categories, form mapping
+				categ = ["dining", "accommodation", "events", "wedding"].indexOf(categVal)
+			}
+
+			var [success, jumpToValue] = controller.rebuildCards({query: inp, category: -1});
+			if (success && (jumpToValue >= 0 || categ >= 0)) {
+				if (categ === -1) {
+					categ = jumpToValue; // overwrite to reference container for scrollTo method
+				} else {
+					// use whatever category was set to
+				}
+
+				var container = controller.sectionContainers[categ];
+				var boundingRect = container.getBoundingClientRect();
+				var height = boundingRect.height;
+				var top = boundingRect.top;
+				console.log(boundingRect)
+				window.scrollTo({
+					top: window.scrollY +top -height,
+					behavior: "smooth"
+				})
+			}
+		})
+
+		// initialise
+		controller.rebuildCards();
+
+		// modal close interactors
+		modal.window.addEventListener("click", e => {
+			modal.toggleOpen(false)
+		})
+		document.getElementById("modal-content-close-btn").addEventListener("click", e => {
+			e.stopPropagation() // prevent event to bubble to modal-window (double triggers in this case)
+			modal.toggleOpen(false)
+		})
+		modal.container.addEventListener("click", e => {
+			e.stopPropagation() // prevent event to bubble to modal-window (triggers close in this case)
+		})
+	</script>
+</html>

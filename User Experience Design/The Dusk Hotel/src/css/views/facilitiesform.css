@@ -1,0 +1,211 @@
+* {box-sizing:border-box}
+
+/* Form page */
+.center-form{
+
+	justify-content: center;
+	
+	display: flex;
+	
+	margin: 30px 40px;
+	
+	border: 3px solid #56453e;
+	
+	padding: 20px;
+	
+	background-color: #f5f3ef;
+	
+}
+	
+	#more {display: none;}
+
+
+
+#animatedDiv{
+	margin-top: 200px;
+	background: #dc143c;
+	min-height: 350px;
+	min-width: 20%;
+	position: absolute;
+}
+#split{
+	display: flex;
+}
+
+#footer{
+	background-color: #f5f5f5;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+ .title2{
+	margin:auto;
+	font-size: 25px;
+	text-align: center;
+	letter-spacing: 1px;
+	
+}
+.title3{
+	font-size:18px;
+	text-align: center;
+	margin:auto;
+}
+.experience{
+	text-align: left;
+	width:50%;
+}
+
+.experience1{
+	text-align: left;
+	width:50%;
+	margin:0px;
+	margin-left: 10%;
+
+}
+.social{
+	font-size: 20px;
+	margin-left: 9%;
+	margin-bottom: 0%;
+	display: inline-block;
+}
+
+.fa {
+	padding: 7px;
+	font-size: 17px;
+	width: 17px;
+	text-align: center;
+	text-decoration: none;
+	margin-left: 10%;
+	border-radius: 50%;
+
+	transition-duration: 190ms;
+}
+
+.fa:hover {
+	opacity: 0.7;
+	background-color:black;
+	color:white;
+}
+
+.fa-facebook {
+   background:#d6ae40;
+	color: white;
+}
+.fa-twitter {
+	background:#d6ae40 ;
+	color: white;
+
+	margin-left: 1%;
+}
+.fa-instagram {
+	background: #d6ae40;
+	color: white;
+
+	margin-left: 1%;
+}
+
+.bottomalign{
+	margin-left:10%;
+}
+a:link{
+	color: black;
+}
+a:hover{
+	color:#c4a654 ;
+	transition: 0.3s;
+}
+#rightDisc{
+	float: right;
+}
+
+#qwer{
+	text-align: right;
+	margin-right: 260px;
+}
+
+
+#intro{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+
+.content {
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	border: 1px solid #ccc; /* Add border around each content */
+	padding: 10px; /* Add padding to separate content from the border */
+}
+
+.content img {
+	max-width: 550px;
+	margin-right: 20px;
+}
+
+.content p {
+	flex: 1;
+	font-size: 20px;
+}
+
+.content #BookNow {
+	float: right;
+}
+
+.spabook {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+form {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+}
+
+select, input[type="text"], input[type="number"], input[type="date"], input[type="time"], input[type="email"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+input[type="submit"] {
+	background-color: #af8b56;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+input[type="submit"]:hover {
+	background-color: #d7b686;
+}
+
+#guestCode {
+	display: none;
+}
+
+.guestType {
+	display: block;
+	margin-bottom: 8px;
+}

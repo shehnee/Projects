@@ -1,0 +1,100 @@
+#header-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	width: 100%;
+	height: calc(100svh - var(--topbar-height));
+
+	color: white;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url("../../static/events/inquiry.jpg")
+}
+
+#header-container::before {
+	display: block;
+	content: "";
+
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	backdrop-filter: brightness(.65);
+	z-index: 0;
+}
+
+#header-container > h1,
+#header-container > h3 {
+	padding: 0 20px;
+
+	text-align: center;
+	text-shadow: #454545 1px 0 10px;
+
+	z-index: 2;
+}
+
+#header-container > h1 {
+	padding: 20px 0;
+	font-size: 54px;
+}
+
+#header-container > h3 {
+	font-weight: 400;
+}
+
+#body-content {
+	padding: 20px 0;
+	padding-top: 80px;
+
+	text-align: center;
+	margin: 20px auto; /* Center the container on the page */
+	padding: 30px;
+	background-color: #f5f3ef;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="email"],
+select {
+	box-sizing: content-box;
+	width: 60%;
+	padding: 12px;
+	border: 1px solid #bd9526;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.input-container {
+	margin-bottom: 20px;
+}
+
+.eventType {
+	display: block;
+	margin-bottom: 8px;
+}
+
+#submitbutton {
+	width: 100px;
+	padding: 15px 30px;
+	margin: 0 auto;
+}
+
+.underline {
+	text-decoration: underline;
+}
+

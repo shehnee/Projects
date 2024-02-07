@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10.0, minimum-scale=1, user-scalable=yes"/>
+		<meta name="description" content=":)"/>
+
+		<link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+		<link rel="stylesheet" href="../../css/includes/reset.css">
+		<link rel="stylesheet" href="../../css/includes/topbar.css">
+		<link rel="stylesheet" href="../../css/includes/footer.css">
+		<link rel="stylesheet" href="../../css/includes/tags.css">
+		<link rel="stylesheet" href="../../css/views/restaurants.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+		<title>The Dusk Hotel | Restaurants</title>
+	</head>
+	<body>
+		<div id="topbar-container">
+			<a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+			<div id="topbar-right-container">
+				<button id="topbar-member-login-btn" type="button">
+					<img src="../../static/account_icon.svg">
+					Member sign in
+				</button>
+				<a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+					BOOK NOW
+				</a>
+				<button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+				</button>
+			</div>
+			<div id="navigation-outer-darken"></div>
+			<div id="navigation-container">
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">ROOMS</button>
+					<div class="navigation-section-element">
+						<a href="./room_landing_page.html">ROOMS</a>
+						<a href="./suite_landing_page.html">SUITES</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">DINING</button>
+					<div class="navigation-section-element">
+						<a href="./restaurants.html">DAWN</a>
+						<a href="./reservations.html">RESERVATIONS</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">EVENTS</button>
+					<div class="navigation-section-element">
+						<a href="./event_venue.html">VENUE</a>
+						<a href="./event_wedding.html">WEDDING</a>
+						<a href="./event_corporate.html">CORPORATE</a>
+						<a href="./event_inquiry.html">INQUIRY</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">FACILITIES</button>
+					<div class="navigation-section-element">
+						<a href="./facilities.html">FACILITIES</a>
+						<a href="./facilities_booking.html">BOOKING</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">OTHERS</button>
+					<div class="navigation-section-element">
+						<a href="./promotions.html">PROMOTIONS</a>
+						<a href="./contact_us.html">CONTACT US</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="frontpage-container">
+			<div id="carousel-container">
+			</div>
+			<div id="greeter-container">
+				<h1>DAWN @ Dusk</h1>
+				<h3>An immersive and elegant dining experience</h3>
+			</div>
+		</div>
+		<nav id="greeter-anchorjump">
+			<p>11 Bayfont Ave, #1-02, Singapore 018957 | +65 6798 8789</p>
+		</nav>
+		<div id="card-grid-overflow-pseudo-container">
+			<div id="card-grid-container">
+				<div id="breakfast-service" class="service-card-frame">
+					<div class="service-card-node"></div>
+					<div class="service-card-connector"></div>
+					<div class="service-card-container">
+						<div class="service-card-thumbnail">
+						</div>
+						<div class="service-card-round-icon-container">
+						</div>
+						<div class="service-card-content-container">
+							<h1>Breakfast service<img src="../../static/croissant_icon.svg"></h1>
+							<div class="service-card-details-content-container">
+								<p><img src="../../static/star_icon.svg">4.1/5</p>
+								<p>08:00am - 12pm</p>
+							</div>
+						</div>
+					</div>
+					<div class="service-card-last-connector"></div>
+					<button class="service-card-menu-download" type="button">
+						<p>Download</p>
+						<h1>MENU</h1>
+					</button>
+				</div>
+				<div id="lunch-service" class="service-card-frame">
+					<div class="service-card-node"></div>
+					<div class="service-card-connector"></div>
+					<div class="service-card-container">
+						<div class="service-card-thumbnail">
+						</div>
+						<div class="service-card-round-icon-container">
+						</div>
+						<div class="service-card-content-container">
+							<h1>Lunch service<img src="../../static/ramen_icon.svg"></h1>
+							<div class="service-card-details-content-container">
+								<p><img src="../../static/star_icon.svg">4.7/5</p>
+								<p>12pm - 03:00pm</p>
+							</div>
+						</div>
+					</div>
+					<div class="service-card-last-connector"></div>
+					<button class="service-card-menu-download" type="button">
+						<p>Download</p>
+						<h1>MENU</h1>
+					</button>
+				</div>
+				<div id="dinner-service" class="service-card-frame">
+					<div class="service-card-node"></div>
+					<div class="service-card-connector"></div>
+					<div class="service-card-container">
+						<div class="service-card-thumbnail">
+						</div>
+						<div class="service-card-round-icon-container">
+						</div>
+						<div class="service-card-content-container">
+							<h1>Dinner service<img src="../../static/dinner_icon.svg"></h1>
+							<div class="service-card-details-content-container">
+								<p><img src="../../static/star_icon.svg">4.4/5</p>
+								<p>05:30pm- 10pm</p>
+							</div>
+						</div>
+					</div>
+					<div class="service-card-last-connector"></div>
+					<button class="service-card-menu-download" type="button">
+						<p>Download</p>
+						<h1>MENU</h1>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+			<h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+			<hr>
+
+			<div id="footer-details">
+				<div id="footer-contact-container" class="footer-section-container">
+					<h2>GENERAL ENQUIRIES</h2>
+					<p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+					<p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CHECK IN / OUT</h2>
+					<p>Check in from: 10:00</p>
+					<p>Check out before 12:00</p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CONNECT WITH US</h2>
+					<div id="footer-socials-container">
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- CREDITS
+			https://svgsilh.com/image/37726.html
+		-->
+	</body>
+	<script>
+		// set scroll for mobile to 50%
+		var cardgridcontainer = document.getElementById("card-grid-overflow-pseudo-container");
+		cardgridcontainer.scrollTo(cardgridcontainer.children[0].offsetWidth *.3333, 0)
+	</script>
+</html>

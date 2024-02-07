@@ -1,0 +1,288 @@
+ /* IMAGE + DELXUE ROOM */
+
+ body{
+	margin:0;
+	width: 95;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+/* IMAGE + HEADER */
+
+#header-viewport-container {
+	position: relative;
+	width: 100%;
+	height: 450px;
+	margin:0;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#image-darken-overlay {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+	
+	backdrop-filter: brightness(60%);
+
+	z-index: 1;
+}
+
+#header-viewport-container > h1 {
+	z-index: 2;
+}
+
+
+#center {
+	margin:0 auto;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	/* first value -50% , element move to the left*/
+	/* second value -50%, element move upwards */
+	transform: translate(-50%, -50%);
+	
+	text-shadow: 1px 1px 1px #333;
+	letter-spacing: 1px;
+	font-size: 60px;
+	color:white;
+	font-weight: bold;
+}
+
+#selector-container{
+	/* min-content, width of element will be adjusted to fit content inside it */
+	width: min-content;
+	padding: 0 20px;
+	margin: 0 auto;
+	display: flex;
+	
+}
+
+
+/* HEADER DESCRIPTION */
+.pheader{
+	font-size:20px;
+	text-align: center;
+	font-weight: lighter;
+   
+}
+
+/* SPECIAL FEATURES */
+
+#deluxedetail2 {
+	flex-basis: min-content; /* will become the height for mobile view :) */
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+
+#roomhighlights{
+	height: calc(100% - 4px); /* minus 2px from top and bottom due to border on the edges */
+	background-color: white;
+	border: 2px solid #d6ae40;
+}
+
+.specialheading{
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 155%;
+	margin-bottom:3%;
+	margin-top:4%;
+	padding: 10px;
+}
+
+.hr{
+	width:40%;
+	margin-bottom: 8%;
+
+}
+
+/* SLIDESHOWS ON THE LEFT */
+
+.left{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	padding: 15px;
+}
+
+#slideshowinfo{
+	position: relative;
+	flex-basis: 450px;
+	flex-grow: 1;
+}
+
+.slideshow-container {
+	position: relative;
+	margin-right: 15px;
+
+	height: 100%;
+}
+
+.internal-slideshow-container {
+	position: absolute;
+	top: 0;
+	height: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.mySlides2 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.mySlides2 > img {
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+	position: absolute;
+	top: 50%;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+
+	user-select: none;
+	cursor: pointer;
+	transition: 0.6s ease;
+}
+
+/* Position the "next button" arrow to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add background and arrow color */
+.prev:hover, .next:hover {
+	background-color: #f1f1f1;
+	color: #bd9526;
+}
+
+/*  ROOM DESCRIPTION */
+.title {
+	font-size: 38px;
+	text-align: center;
+	letter-spacing: 1px;
+	margin-top:20px;
+	margin-bottom: 0px;
+	color:rgb(44, 40, 40);
+}
+
+.hrstyle {
+	margin-top: 10px;
+	width:160px;
+	padding:0.7px;
+	background-color:#d6ae40;
+	border-color: #d6ae40;
+}
+
+.subheading {
+	font-size: 17px;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 2%;
+}
+ 
+/* AMENITIES AND SERVICES */
+/* to create two-column grid & first and second column takes 1fr*/
+.amenitiesdiv {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	padding-left: 250px;
+	padding-right: 50px;
+}
+
+.amenities {
+	padding: 0 20px;
+}
+
+.amenities > ul {
+	padding-left: 0;
+}
+
+
+
+#deluxedetail1 {
+	padding-bottom: 30px;
+}
+
+#heading {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.stylehr {
+	margin-left:43%;
+	width:14%;
+}
+
+.subheading2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 20px
+}
+
+li.list {
+	line-height:150%;
+	margin-left: 15px;
+}
+
+ul {
+	list-style: none;
+	padding-right: 15px;
+}
+
+/* insert bullet point symbol before the element's content */
+ul li::before{
+	content:"\2022";
+	color:#d6ae40;
+	font-weight: bold;
+	display: inline-block;
+	width:1em;
+	margin-left: -15px;
+}
+
+@media only screen and (max-width:992px){
+	.title{
+		margin-top: 4%; 
+	}
+	.left {
+		flex-direction: column; 
+	}
+
+	#slideshowinfo {
+		padding-bottom: 15px;
+	}
+
+	.slideshow-container {
+		margin-right: 0;
+	}
+
+	/* to make it one-column grid and not two */
+	.amenitiesdiv{
+		grid-template-columns: 1fr;
+		padding : 0px 25px 0px 50px;
+	}
+
+	.slideshow-container {
+		padding: 0px;
+	}
+	.amenitiescontainer{
+		padding:0px;
+	}
+}

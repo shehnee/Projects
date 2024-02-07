@@ -1,0 +1,292 @@
+#header-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	width: 100%;
+	height: calc(100svh - var(--topbar-height));
+
+	color: white;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url("../../static/events/venue.jpg")
+}
+
+#header-container::before {
+	display: block;
+	content: "";
+
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	backdrop-filter: brightness(.65);
+	z-index: 0;
+}
+
+#header-container > h1,
+#header-container > h3 {
+	padding: 0 20px;
+
+	text-align: center;
+	text-shadow: #454545 1px 0 10px;
+
+	z-index: 2;
+}
+
+#header-container > h1 {
+	padding: 20px 0;
+	font-size: 54px;
+}
+
+#header-container > h3 {
+	font-weight: 400;
+}
+
+#body-content {
+	width: 100%;
+	padding: 20px 0;
+	padding-top: 80px;
+}
+
+.function-card {
+	display: flex;
+	flex-direction: row;
+
+	width: 100%;
+}
+
+.function-image {
+	flex-grow: 1;
+	flex-shrink: .4;
+	flex-basis: 400px;
+
+	min-height: 400px;
+	height: auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.function-detail-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	flex-grow: .4;
+	flex-shrink: 1;
+	flex-basis: 400px;
+
+	padding: 20px;
+
+	background-color: var(--secondary-compl-color);
+}
+
+.function-detail-info > h2 {
+	margin-bottom: 20px;
+	font-weight: 400;
+}
+
+.function-detail-info > p {
+	line-height: 1.5;
+	font-family: sans-serif;
+}
+
+.function-attributes-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+
+	margin-top: 20px;
+}
+
+.function-attributes-container > div {
+	min-width: 24px;
+	min-height: 24px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.function-pax-count {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	margin-right: 12px;
+}
+
+.function-pax-count::before {
+	display: block;
+	content: "";
+
+	width: 24px;
+	height: 24px;
+
+	background-size: cover;
+	background-repeat:  no-repeat;
+	background-image: url("../../static/people_icon.svg");
+}
+
+.function-wifi-icon {
+	background-image: url("../../static/wifi_icon.svg");
+}
+
+.function-accessible-icon {
+	background-image: url("../../static/accessible_icon.svg");
+}
+
+.firstpart {
+	background-color: #faf5e2;
+	height: 352px;
+	padding-right: 5%;
+}
+
+.divider {
+	height: 30px;
+}
+
+.info {
+	text-align: center;
+	color: var(--tertiary-color);
+	line-height: 1.4;
+}
+
+.secondpart {
+	text-align: center;
+	background-color: #faf5e2;
+	min-height: 150px;
+	height: auto;
+	padding: 20px;
+}
+
+.general {
+	color: var(--tertiary-color);
+	font-family: sans-serif;
+}
+
+.general > p {
+	padding-bottom: 20px;
+}
+
+.info a {
+	background-color: var(--primary-compl-color);
+
+	text-align: center;
+	text-decoration: none;
+
+	position: relative;
+	width: 100px;
+	margin: auto;
+}
+
+.faq {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.faq-item {
+	margin-bottom: 10px;
+}
+
+#equipment-services {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.faq-header {
+	width: 60%;
+	margin-left: 20%;
+
+	background-color: var(--primary-color);
+	padding: 10px;
+	cursor: pointer;
+	color: var(--tertiary-color);
+	font-size: 18px;
+	border: 0;
+}
+
+.faq-header:hover {
+	background-color: #e0d7c7;
+}
+
+.faq-header:after {
+	content: '\002B';
+	color: #777;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+
+.active:after {
+	content: '\2212';
+}
+
+.faq-content {
+	padding: 10px;
+	display: none;
+}
+
+.top-list {
+	margin: 0;
+	text-align: left;
+	margin-left: 80px;
+	color: var(--tertiary-color);
+	font-size: large;
+}
+
+.faq-list {
+	list-style-type: none;
+	text-align: left;
+	color: var(--tertiary-color);
+	margin-left: 350px;
+}
+
+.faq-hr {
+	width: 80%;
+	border: 1px solid var(--primary-compl-color);
+	border-radius: 5px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 60%;
+	margin-left: 20%;
+	color: var(--tertiary-color);
+}
+
+td, th {
+	border: 1px solid var(--primary-compl-color);
+	text-align: left;
+	padding: 8px;
+}
+
+#split{
+	display: flex;
+}
+
+@media screen and (max-width: 800px) {
+	.faq-list {
+		margin-left: 20px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.function-card {
+		flex-direction: column;
+	}
+
+	.top-list {
+		margin: 0;
+	}
+
+	table {
+		width: 100%;
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Thank You for staying with The Dusk Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+    <style>
+        /* ROOT STYLES */
+            :root {
+            --primary-color: #faf5e2; /* golden yellow */
+            --primary-compl-color: #bd9526; /* darker yellow, slightly more gold */
+            --secondary-color: #e0d7c7; /* khaki */
+            --secondary-compl-color: #f5f3ef; /* peach white */
+            --tertiary-color: #56453e; /* pruce */
+
+            --black-color: #211c1d;
+
+            /* fonts */
+            --primary-font-family: 'reforma-1918', serif;
+            --primary-font-family-bold: 'reforma-1918-bold', serif;
+            --secondary-font-family: 'Poppins', sans-serif;
+            --secondary-font-family-sbold: 'Poppins-SBOLD', sans-serif;
+            --secondary-font-family-bold: 'Poppins-BOLD', sans-serif;
+            }          
+        /* font imports  */
+            @font-face {
+                font-family: 'Poppins';
+                src: url(Poppins/Poppins-Regular.ttf);
+            }
+            @font-face {
+                font-family: 'Poppins-SBOLD';
+                src: url(Poppins/Poppins-SemiBold.ttf);
+            }
+            @font-face {
+                font-family: 'Poppins-BOLD';
+                src: url(Poppins/Poppins-Bold.ttf);
+            }
+            @font-face {
+                font-family: 'Reforma-1918';
+                src: url(reforma-1918-cufonfonts/Reforma1918-Blanca.otf);
+            }
+            @font-face {
+                font-family: 'Reforma-1918-BOLD';
+                src: url(reforma-1918-cufonfonts/Reforma1918-Negra.otf);
+            }
+/* html css */
+html {
+    width:100%;
+    place-items: center;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    width: 100% ;
+    max-width: 100%;
+    background-color: var(--secondary-compl-color);
+    overscroll-behavior: none;
+    transition: 0.3s ease-out;
+    overflow-x: hidden;
+    font-family: var(--secondary-font-family);
+}
+
+* {
+  box-sizing: border-box;
+  max-width:100%;
+  max-width:100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container_banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/3771811/pexels-photo-3771811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) no-repeat 50% 50%; 
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+h2 {
+    position: fixed;
+    text-align: center;
+    color: var(--secondary-color);
+    font-family: var(--primary-font-family-bold);
+    font-size: 3rem;
+}
+p.first_para {
+    text-align: center;
+    padding-top: 395px;
+    padding-bottom: 180px;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+p.footer_para {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
+/* .content1_container {
+    height: 100vh;
+} */
+    </style>
+</head>
+<body>
+    <div class="container_banner">
+        <h2>
+            Thank You for choosing to stay with
+            <br>
+            The Dusk Hotel
+        </h2>
+        <div>
+            <p class="first_para">
+                We look forward to seeing you!
+            </p>
+            <p class="footer_para">
+                Follow us on all our socials for more
+            </p>
+        </div>
+    </div>
+    <!-- <div class="content1_container">
+
+    </div> -->
+
+</body>
+</html>

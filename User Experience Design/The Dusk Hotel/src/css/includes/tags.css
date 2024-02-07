@@ -1,0 +1,30 @@
+/* for generic tags that perform the same function, such as buttons */
+
+/* interactive buttons */
+.global-site-btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	padding: 10px;
+
+	text-decoration: none;
+
+	color: #fff;
+	background-color: var(--primary-compl-color);
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--secondary-color);
+
+	transition-property: color, background-color;
+	transition-duration: 150ms;
+	transition-timing-function: linear;
+}
+
+.global-site-btn:hover,
+.global-site-btn:focus {
+	color: #000;
+	background-color: var(--primary-color);
+}

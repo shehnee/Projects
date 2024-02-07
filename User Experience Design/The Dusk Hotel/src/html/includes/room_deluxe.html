@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" initial-scale="1">
+		<title>The Dusk Hotel | Deluxe Room</title>
+		<script src='https://kit.fontawesome.com/420a782bb1.js' crossorigin='anonymous'></script>
+		<link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+		<link rel="stylesheet" href="../../css/includes/topbar.css">
+		<link rel="stylesheet" href="../../css/includes/footer.css">
+		<link rel="stylesheet" href="../../css/includes/tags.css">
+		<link rel="stylesheet" href="../../css/includes/room_viewing.css">
+
+		<style>
+			#header-viewport-container {
+				background-image: url("../../static/rooms/deluxbedroom.png");
+			}
+		</style>
+	</head>
+	<body>
+		<div id="topbar-container">
+			<a id="comp-logo-a-wrapper" href="../views/homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+			<div id="topbar-right-container">
+				<button id="topbar-member-login-btn" type="button">
+					<img src="../../static/account_icon.svg">
+					Member sign in
+				</button>
+				<a id="topbar-booknow-btn" class="global-site-btn" href="../views/room_booking.html">
+					BOOK NOW
+				</a>
+				<button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+				</button>
+			</div>
+			<div id="navigation-outer-darken"></div>
+			<div id="navigation-container">
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">ROOMS</button>
+					<div class="navigation-section-element">
+						<a href="../views/room_landing_page.html">ROOMS</a>
+						<a href="../views/suite_landing_page.html">SUITES</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">DINING</button>
+					<div class="navigation-section-element">
+						<a href="../views/restaurants.html">DAWN</a>
+						<a href="../views/reservations.html">RESERVATIONS</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">EVENTS</button>
+					<div class="navigation-section-element">
+						<a href="../views/event_venue.html">VENUE</a>
+						<a href="../views/event_wedding.html">WEDDING</a>
+						<a href="../views/event_corporate.html">CORPORATE</a>
+						<a href="../views/event_inquiry.html">INQUIRY</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">FACILITIES</button>
+					<div class="navigation-section-element">
+						<a href="../views/facilities.html">FACILITIES</a>
+						<a href="../views/facilities_booking.html">BOOKING</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">OTHERS</button>
+					<div class="navigation-section-element">
+						<a href="../views/promotions.html">PROMOTIONS</a>
+						<a href="../views/contact_us.html">CONTACT US</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="header-viewport-container">
+			<div id="image-darken-overlay"></div>
+			<h1 id="center">Deluxe Room 
+			  <p class = "pheader">60 m² / 645 ft² <span style="color: #bd9526;" >|</span> 3 Guests <span style="color:#bd9526;">|</span> City View</p>
+			</h1> 
+		</div>
+
+		<p class="title">Room Description <hr class="hrstyle"></p>
+		<div class="left">
+			<!-- ROOM IMAGE + SERVICES LEFT SIDE -->
+			<div id="slideshowinfo">
+				<div class="slideshow-container">
+					<div class="mySlides1"></div>
+				
+					<div class="internal-slideshow-container">
+						<div class="mySlides2">
+							<img src="../../static/rooms/deluxlivingroom.png">
+						</div>
+					
+						<div class="mySlides2">
+							<img src="../../static/rooms/deluxbathroom.png">
+						</div>
+					
+						<div class="mySlides2">
+							<img src="../../static/rooms/deluxbedroom.png">
+						</div>
+
+						<div class="mySlides2">
+							<img src="../../static/rooms/telephone.jpg">
+						</div>
+					
+						<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- RIGHT SIDE OF PAGE -->
+			<div id="deluxedetail2">
+				<div id="roomhighlights">
+					<p class="specialheading">SPECIAL FEATURES</p><hr class="hr">
+					<ul>
+						<p class="subheading">DIGITAL PANEL</p>
+						<li class="list">Interactive digital panel of 3 languages:</li>
+						<li class="list">English, Simplified Chinese & Korean</li>
+						<li class="list">Displays restaurant menus</li>
+					<br>
+						<p class="subheading">LED TOUCH SCREEN</p>
+						<li class="list">LED touch screen wall panels programmed in 3 languages</li>
+						<li class="list">Adjust lights, curtain & temperature </li>
+					<br>
+						<p class="subheading">TELEVISION</p>
+						<li class="list">Television displays 8K resolution</li>
+						<li class="list">Offers sharp & immersive viewing experience </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- BOTTOM -->
+		<div id="deluxedetail1">
+			<p id="heading">AMENITIES & SERVICES</p>
+			<hr class="stylehr">
+			<br>
+
+			<div class="amenitiesdiv">
+				<div class="amenitiescontainer">
+					<div class="amenities">
+					<p class="subheading2"><i style='font-size:18px' class='fas'>&#xf46c;</i> ROOM FEATURES </p>
+						<ul>
+							<li class="list">Work desk with 24' inch iMac</li>
+							<li class="list">Coffee and tea making facilities</li>
+							<li class="list">NEXEN electric bars with multimedia connectors<br><i>(HDMI, Ethernet and USB ports)</i></li>
+						</ul>
+					</div>
+				</div>
+
+			
+				<div class="amenitiescontainer">
+					<div class="amenities">
+						<p class="subheading2"> <i style='font-size:18px;' class='fas'>&#xf1eb;</i> INTERNET ACCESS</p>
+						<ul>
+							<li class="list">Select "dusk_guest" network</li>
+							<li class="list">Reach out to front desk for WIFI password</li>
+							<li class="list">Unlimited wireless internet access <i>(available 24/7)</i></li>
+						</ul>
+					</div>
+				</div>
+			   
+
+				<div class="amenitiescontainer">
+					<div class="amenities">
+						<p class="subheading2"><i style='font-size:18px;' class='fas'>&#xf236;</i> BED</p>
+						<ul>
+							<li class="list">1 King Size Bed</li>
+							<li class="list">Silk bedding sheets</li>
+							<li class="list">3 sets of disposable slippers</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="amenitiescontainer">
+					<div class="amenities">
+						<p class="subheading2"><i style='font-size:18px' class='fas'>&#xf2cc;</i> BATHROOM</p>
+						<ul>
+							<li class="list">Bathtub</li>
+							<li class="list">Double sink</li>
+							<li class="list">Premium bathroom amenities</li>
+							<li class="list">3 sets of bathrobes, slippers and towels</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="amenitiescontainer">
+					<div class="amenities">
+						<p class="subheading2"><i style='font-size:18px' class='fas'>&#xf11b;</i> ENTERTAINMENT</p>
+							<ul>
+							<li class="list">PlayStation 5 <i>(2 controllers)</i></li>
+							<li class="list">40' inch PRISM+ TV <i>(living room & bedroom)</i></li>
+							<li class="list">Access to Netflix, Disney+ and other channels</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="amenitiescontainer">
+					<div class="amenities">
+						<p class="subheading2"><i style='font-size:18px' class='fas'>&#xf067;</i> ADDITIONAL REQUEST PROVIDED</p>
+						<ul>
+							<li class="list">Baby Crib</li>
+							<li class="list">Foldable Bed</i></li>
+							<li class="list">Extra Bed <i>(only twin bed available)</i></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+			<h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+			<hr>
+
+			<div id="footer-details">
+				<div id="footer-contact-container" class="footer-section-container">
+					<h2>GENERAL ENQUIRIES</h2>
+					<p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+					<p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CHECK IN / OUT</h2>
+					<p>Check in from: 10:00</p>
+					<p>Check out before 12:00</p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CONNECT WITH US</h2>
+					<div id="footer-socials-container">
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<!-- JAVASCRIPT FOR SLIDESHOW -->
+		<script>
+			let slideIndex = [1,1];
+			let slideId = ["mySlides1", "mySlides2"]
+			showSlides(1, 0);
+			showSlides(1, 1);
+			
+			function plusSlides(n, no) {
+			showSlides(slideIndex[no] += n, no);
+			}
+			
+			function showSlides(n, no) {
+			let i;
+			let x = document.getElementsByClassName(slideId[no]);
+			if (n > x.length) {slideIndex[no] = 1}    
+			if (n < 1) {slideIndex[no] = x.length}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+			x[slideIndex[no]-1].style.display = "block";  
+			}
+		</script>  
+	</body>
+</html> 
+
+
+							
+
+
+
+
+
+
+
+
+		

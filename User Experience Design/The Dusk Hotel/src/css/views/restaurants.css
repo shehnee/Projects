@@ -1,0 +1,527 @@
+:root {
+	--primary-color: #faf5e2; /* golden yellow */
+	--primary-compl-color: #bd9526; /* darker yellow, slightly more gold */
+	--secondary-color: #e0d7c7; /* khaki */
+	--secondary-compl-color: #f5f3ef; /* peach white */
+	--secondary-trans-color: #e0d7c700;
+	--tertiary-color: #56453e; /* pruce */
+
+	--black-color: #211c1d;
+
+	--topbar-height: 82px;
+	--page-horizontal-whitespace: 150px;
+}
+
+/* DEFAULT STYLES */
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	font-family: 'Playfair Display', serif;
+
+	word-wrap: break-word;
+
+	background-color: white;
+}
+
+h1 {
+	font-size: 46px;
+	font-weight: 900;
+
+	letter-spacing: .2rem;
+}
+
+h2 {
+	color: var(--primary-compl-color);
+}
+
+p {
+	font-family: serif;
+	font-weight: 300;
+	letter-spacing: normal;
+	line-height: 1.5;
+
+	color: var(--black-color);
+}
+
+a {
+	color: var(--primary-compl-color);
+	font-family: 'Times New Roman', serif;
+}
+
+/* STANDARD UTIL CLASSES */
+.hidden {
+	display: none;
+}
+
+/* FRONT PAGE CONTAINER (to contain carousel and searchbar in a flex container) */
+#frontpage-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	height: calc(100svh - var(--topbar-height));
+
+	background-color: white;
+}
+
+/* CAROUSEL STYLING */
+#carousel-container {
+	--current-active-image: url("../../static/dawn_banner.webp");
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: min(70%, 500px);
+
+	width: 100%;
+	min-height: 0;
+
+	background-image: var(--current-active-image);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	animation-name: carousel_backandforth;
+	animation-duration: 12s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+@keyframes carousel_backandforth {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+
+/* GREETER STYLING */
+#greeter-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	flex-grow: 0;
+	flex-shrink: 1;
+
+	min-height: 0;
+
+	padding: 30px;
+}
+
+#greeter-container > h1 {
+	color: black;
+
+	font-family: "Times New Roman";
+	font-weight: 400;
+
+	letter-spacing: .1px;
+}
+
+#greeter-container > h3 {
+	font-weight: 400;
+	font-size: 18px;
+	padding-top: 20px;
+}
+
+#page-header {
+	padding: 30px var(--page-horizontal-whitespace) 15px;
+}
+
+#page-caption {
+	padding: 15px var(--page-horizontal-whitespace);
+	margin-bottom: 20px;
+}
+
+/* STICKY ANCHOR JUMP LINK TAGS */
+#greeter-anchorjump {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	position: sticky;
+	top: calc(var(--topbar-height) + 2px);
+
+	width: 100%;
+
+	background-color: white;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 8px 0px;
+
+	z-index: 4;
+}
+
+#greeter-anchorjump > p {
+	padding: 10px;
+
+	font-size: .9rem;
+
+	text-align: center;
+}
+
+#greeter-anchorjump a {
+	color: #7e7e7e;
+}
+
+/* LINE EXTENSIONS */
+#line-extensions {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	margin-top: 40px;
+
+	z-index: 0;
+}
+
+#line-extensions > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	position: relative;
+
+	flex-grow: 1;
+	height: 50px;
+}
+
+#line-extensions > div::before {
+	content: "";
+	display: block;
+
+	position: absolute;
+	top: 0;
+	left: calc(50% - 16px);
+
+	width: 32px;
+	height: 32px;
+
+	transform: rotate(45deg);
+
+	background-color: var(--secondary-compl-color);
+}
+
+#line-extensions > div::after {
+	content: "";
+	display: block;
+
+	width: 2px;
+	height: calc(100% + 120px);
+
+	background-color: var(--secondary-compl-color);
+}
+
+/* CARD CONTENT STYLING */
+#card-grid-overflow-pseudo-container {
+	/* to support overflow on mobile */
+	overflow-x: auto;
+}
+
+#card-grid-container {
+	display: flex;
+	flex-direction: row;
+
+	position: relative;
+
+	padding-top: 40px;
+
+	z-index: 2;
+}
+
+/* INDIVIDUAL CARD STYLING */
+.service-card-frame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
+
+	min-width: 0;
+	width: 100%;
+	height: auto;
+
+	aspect-ratio: .6;
+
+	padding: 40px;
+}
+
+.service-card-node {
+	width: 32px;
+	height: 32px;
+	
+	transform: rotate(45deg);
+
+	background-color: var(--secondary-compl-color);
+}
+
+.service-card-connector {
+	width: 2px;
+	height: 140px;
+
+	background-color: var(--secondary-compl-color);
+
+	transition-property: height;
+	transition-duration: 150ms;
+	transition-timing-function: linear;
+}
+
+.service-card-frame:hover > .service-card-connector {
+	height: 100px;
+}
+
+.service-card-container {
+	--round-icon-size: 256px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+	height: auto;
+
+	aspect-ratio: .6;
+
+	background-color: var(--secondary-compl-color);
+
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--secondary-color);
+}
+
+.service-card-thumbnail {
+	width: 100%;
+	min-height: 0;
+
+	aspect-ratio: 1.5;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.service-card-round-icon-container {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: var(--round-icon-size);
+
+	position: relative;
+	top: calc(var(--round-icon-size) / -2);
+
+	width: var(--round-icon-size);
+	height: var(--round-icon-size);
+
+	border-radius: calc(var(--round-icon-size) / 2);
+	border-style: solid;
+	border-width: 4px;
+	border-color: white;
+
+	background-image: url("https://confirmgood.com/wp-content/uploads/2022/04/estate9-scaled.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.service-card-content-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	flex-grow: 1;
+
+	width: calc(100% - 40px);
+	min-height: 0;
+
+	padding: 20px;
+	margin-top: calc(var(--round-icon-size) * -0.5);
+}
+
+.service-card-content-container > h1 {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.service-card-details-content-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.service-card-details-content-container > p {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.service-card-details-content-container img {
+	width: 24px;
+	height: 24px;
+
+	padding: 4px;
+	margin-top: -4px;
+}
+
+.service-card-last-connector {
+	width: 2px;
+	height: 100px;
+
+	background-color: var(--secondary-compl-color);
+
+	transition-property: height;
+	transition-duration: 150ms;
+	transition-timing-function: linear;
+}
+
+.service-card-frame:hover > .service-card-last-connector {
+	height: 140px;
+}
+
+.service-card-menu-download {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+
+	padding: 20px;
+
+	color: white;
+
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--secondary-color);
+	background-color: var(--primary-compl-color);
+
+	transition-property: color, border-color, background-color;
+	transition-duration: 150ms;
+	transition-timing-function: linear;
+}
+
+.service-card-menu-download:hover,
+.service-card-menu-download:focus {
+	color: #000;
+	border-color: var(--black-color);
+	background-color: var(--secondary-compl-color);
+}
+
+.service-card-menu-download > p {
+	font-size: 12px;
+	color: inherit;
+}
+
+.service-card-menu-download > h1 {
+	font-size: 34px;
+	font-weight: 500;
+	color: inherit;
+}
+
+/* SERVICE CARD THUMBNAILS */
+#breakfast-service .service-card-thumbnail,
+#breakfast-service .service-card-round-icon-container {
+	background-image: url("https://confirmgood.com/wp-content/uploads/2022/04/estate9-scaled.jpg");
+}
+
+#lunch-service .service-card-thumbnail,
+#lunch-service .service-card-round-icon-container {
+	background-image: url("https://confirmgood.com/wp-content/uploads/2022/04/estate4-scaled.jpg");
+}
+
+#dinner-service .service-card-thumbnail,
+#dinner-service .service-card-round-icon-container {
+	background-image: url("https://confirmgood.com/wp-content/uploads/2022/04/estate10-1-scaled.jpg");
+}
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 900px) {
+	:root {
+		--page-horizontal-whitespace: 40px;
+	}
+
+	/* reduce whitespace between member sign in button and login button */
+	/* add whitespace between company logo and member sign in button */
+	#topbar-member-login-btn {
+		margin-left: 15px;
+		margin-right: 20px;
+	}
+
+	/* disable horizontal flow on entire body */
+	body {
+		overflow-x: auto;
+	}
+
+	/* make the cards scrollable */
+	#card-grid-container {
+		width: 300vw;
+	}
+
+	/* reduce card width so it isnt so tall (height computed by aspect ratio) */
+	/* do so by reducing big container so -container (direct children of -frame) will be shrinked */
+	.service-card-frame {
+		padding-left: 160px;
+		padding-right: 160px;
+	}
+}
+
+@media only screen and (max-width: 620px) {
+	:root {
+		/* reduce topbar height */
+		--topbar-height: 64px;
+
+		/* reduce horizontal padding */
+		--page-horizontal-whitespace: 20px;
+	}
+
+	/* reduce whitespace between member sign in button and login button */
+	/* add whitespace between company logo and member sign in button */
+	#topbar-member-login-btn {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	/* expand slightly card width so it isnt so tall (height computed by aspect ratio) [RELATIVE TO PREVIOUS MEDIA QUERY] */
+	/* do so by reducing big container so -container (direct children of -frame) will be shrinked */
+	.service-card-frame {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+
+	/* reduce round icon size on cards */
+	.service-card-container {
+		--round-icon-size: 168px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	:root {
+		--page-horizontal-whitespace: 15px;
+	}
+
+	/* hide member sign in button completely */
+	#topbar-member-login-btn {
+		display: none;
+	}
+
+	/* expand slightly card width so it isnt so tall (height computed by aspect ratio) [RELATIVE TO PREVIOUS MEDIA QUERY] */
+	/* do so by reducing big container so -container (direct children of -frame) will be shrinked */
+	.service-card-frame {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	/* reduce round icon size on cards */
+	.service-card-container {
+		--round-icon-size: 128px;
+	}
+
+	/* reduce height of connector */
+	.service-card-last-connector {
+		height: 40px;
+	}
+
+	.service-card-frame:nth-child(2) > .service-card-last-connector {
+		height: 80px;
+	}
+}

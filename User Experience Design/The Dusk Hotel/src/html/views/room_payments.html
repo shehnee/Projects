@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <title>PAYMENT | The Dusk Hotel</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="../../css/includes/topbar.css">
+  <link rel="stylesheet" href="../../css/includes/footer.css">
+  <link rel="stylesheet" href="../../css/includes/tags.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../css/views/checkout.css">
+  <script src="../../js/views/checkout.js"></script>
+  <style>
+/* ROOT STYLES */
+:root {
+  --primary-color: #faf5e2; /* golden yellow */
+  --primary-compl-color: #bd9526; /* darker yellow, slightly more gold */
+  --secondary-color: #e0d7c7; /* khaki */
+  --secondary-compl-color: #f5f3ef; /* peach white */
+  --tertiary-color: #56453e; /* pruce */
+
+  --black-color: #211c1d;
+
+  /* fonts */
+  --primary-font-family: 'reforma-1918', serif;
+  --primary-font-family-bold: 'reforma-1918-bold', serif;
+  --secondary-font-family: 'Poppins', sans-serif;
+  --secondary-font-family-sbold: 'Poppins-SBOLD', sans-serif;
+  --secondary-font-family-bold: 'Poppins-BOLD', sans-serif;
+}          
+  /* font imports  */
+			@font-face {
+				font-family: 'Poppins';
+				src: url("../../static/fonts/Poppins/Poppins-Regular.ttf");
+			}
+			@font-face {
+				font-family: 'Poppins-SBOLD';
+				src: url("../../static/fonts/Poppins/Poppins-SemiBold.ttf");
+			}
+			@font-face {
+				font-family: 'Poppins-BOLD';
+				src: url("../../static/fonts/Poppins/Poppins-Bold.ttf");
+			}
+			@font-face {
+				font-family: 'Reforma-1918';
+				src: url("../../static/fonts/reforma-1918-cufonfonts/Reforma1918-Blanca.otf");
+			}
+			@font-face {
+				font-family: 'Reforma-1918-BOLD';
+				src: url("../../static/fonts/reforma-1918-cufonfonts/Reforma1918-Negra.otf");
+			}
+/* html css */
+html {
+	width:100%;
+	place-items: center;
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	width: 100% ;
+	max-width: 100%;
+	background-color: #FFFFFF;
+	overscroll-behavior: none;
+	transition: 0.3s ease-out;
+	overflow-x: hidden;
+	font-family: var(--secondary-font-family);
+}
+
+* {
+  box-sizing: border-box;
+  max-width:100%;
+  max-width:100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* main content */
+
+.progress_container {
+  padding-top: 115px;
+  padding-bottom: 25px;
+}
+
+.container4progress{
+  margin-top: 25px;
+  background-color:#CCC;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container4progress .progress-bar{
+  height:100%;
+  background-color: var(--primary-compl-color);
+  width:60%;
+  color:white;
+  text-align:center;
+  font-size:17px;
+}
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#confirmation-page {
+  padding: 24px;
+}
+
+textarea {
+  resize: none;
+}
+
+#confirmation-page .container {
+  display: flex;
+  flex-direction: column;
+}
+
+#confirmation-page h2 {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  flex-basis: 50%;
+  padding-bottom: 24px;
+  text-align: center;
+  font-family: var(--primary-font-family-bold);
+}
+
+#confirmation-page h3 {
+  font-size: 25px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.add-ons{
+  text-align: left;
+}
+
+#confirmation-page .guest-info, #confirmation-page .add-ons, #confirmation-page .payments, #confirmation-page .terms-and-conditions {
+  padding: 24px;
+  margin-bottom: 16px;
+  background-color: #FFFFFF;
+  box-shadow: 8px 8px #dcdcdc;
+}
+
+#confirmation-page .guest-info div {
+  margin-bottom: 4px;
+}
+
+#confirmation-page #countries label, #countrycode label, #emailadd label, #preferences label {
+  display: inline;
+}
+
+#confirmation-page #titlename select{
+  margin-left:85px;
+}
+
+#confirmation-page #firstname input{
+  margin-left: 47px;
+}
+
+#confirmation-page #lastname input{
+  margin-left: 49px;
+}
+
+#confirmation-page #countries select{
+  margin-left: 63px;
+  width:165px;
+}
+
+#confirmation-page #emailadd input{
+  margin-left: 23px;
+}
+
+#confirmation-page #preferences label{
+  vertical-align: top;
+}
+
+#confirmation-page #countrycode select {
+  margin-left: 19px;
+}
+
+#confirmation-page #firstname, #confirmation-page #lastname, #confirmation-page #countries, #confirmation-page #countrycode, #confirmation-page #emailadd, #confirmation-page #preferences, #confirmation-page #disclaimer {
+  margin-top: 8px;
+}
+
+
+#confirmation-page #countrycode select {
+  width: 100px;
+}
+
+#confirmation-page .disclaimerheading {
+  color: red;
+  font-weight:bold;
+  font-style: italic;
+}
+
+#confirmation-page .add-ons p {
+  margin-bottom: 20px;
+}
+
+#confirmation-page .add-ons .upgradebtn {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  border: 1px solid var(--tertiary-color);
+  border-radius: 2px;
+  line-height: 40px;
+  padding: 0 24px;
+  transition: all .2s;
+  cursor: pointer;
+  font-size:16px;
+}
+
+#confirmation-page .add-ons .upgradebtn:hover {
+  background-color: var(--primary-compl-color);
+  color: white;
+  border: 1px solid --primary-compl-color;
+}
+
+#confirmation-page .payments div {
+  margin-bottom: 15px;
+}
+
+#confirmation-page .icon-container label{
+  margin-right: 15px;
+}
+
+#confirmation-page .cardname input {
+  margin-left: 40px;
+}
+
+#confirmation-page .creditcardnumber input {
+  margin-left: 2px;
+}
+
+#confirmation-page .cvv input {
+  margin-left: 101px;
+}
+
+#confirmation-page .expdate input {
+  margin-left: 74px;
+}
+
+
+#confirmation-page .terms-and-conditions p {
+  margin-bottom: 17px;
+}
+
+#confirmation-page .terms-and-conditions i span {
+  font-weight: 700;
+}
+
+#confirmation-page .terms-and-conditions {
+  margin-bottom: 24px;
+}
+
+
+.booking-details {
+  background-color: var(--secondary-compl-color);
+  padding: 24px;
+  height:100%;
+}
+
+.booking-details hr {
+  height: 3px;
+  width: 40%;
+  color: var(--primary-compl-color);
+  background-color: var(--primary-compl-color);
+  border: var(--primary-compl-color);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+.booking-details picture {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.booking-details .dates div, .booking-details .group div {
+  margin-bottom: 4px;
+}
+
+.booking-details .group {
+  margin-bottom: 24px;
+}
+
+.booking-details .take-notes {
+  margin-bottom: 24px;
+}
+
+.booking-details p {
+  margin-bottom: 8px;
+}
+
+.booking-details p i {
+  font-weight: 700;
+}
+
+.proceedbtn {
+  background-color: var(--secondary-color);
+  color: black;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 2px;
+  line-height: 40px;
+  padding: 0 24px;
+  transition: all .2s;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.proceedbtn:hover {
+  background-color: var(--primary-compl-color);
+  border: 1px solid var(--tertiary-color);
+  color: var(--primary-color);
+}
+
+.take-notes p{
+  margin-bottom: 25px;
+}
+
+.price-breakdown p{
+  margin-bottom:30px;
+}
+
+
+.price-room span{
+  margin-left:137px;
+}
+
+.price-tax span{
+  margin-left:74px;
+}
+
+
+.price-total span{
+  margin-left:190px;
+}
+
+
+.price-breakdown hr {
+  height: 3px;
+  width: 100%;
+  color: #696969;
+  background-color: #696969;
+  border: #696969;
+}
+
+.fyi{
+  opacity:0.8;
+}
+
+
+/* Start of the Footer's CSS */
+
+footer .footer_container {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	padding-left: 24px;
+	padding-right: 24px;
+	background-color: var(--secondary-compl-color);
+}
+
+.title2{
+	margin:auto;
+	font-size: 25px;
+	font-family: var(--primary-font-family-bold);
+	text-align: center;
+	letter-spacing: 1px;
+}
+.title3{
+	font-family: var(--secondary-font-family);
+	font-size:18px;
+	text-align: center;
+	margin:auto;
+}
+
+footer a {
+	/* font-family: var(--primary-font-family); */
+	/* second option ^ */
+	font-family: var(--secondary-font-family);
+	text-decoration: none;
+	transition: all .2s;
+	color: #000000;
+}
+
+footer a:hover {
+	color: var(--primary-compl-color);
+}
+
+footer h4 {
+	font-family: var(--primary-font-family-bold);
+	position: relative;
+	font-size: 18px;
+	margin-bottom: 16px;
+}
+
+footer h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: var(--primary-compl-color);
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+footer ul {
+  list-style:none;
+  width:100%;
+  padding:0;
+}
+
+footer ul li {
+  line-height: 1.8em;
+}
+
+.thedusk, .quicklinks, .hotel-reservations, .restaurant-reservations {
+  margin-bottom: 32px;
+}
+
+footer .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: var(--primary-compl-color);
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  transition: all 0.2s;
+}
+
+footer .social-links a:hover {
+  color: var(--tertiary-color);
+  background-color: var(--primary-color);
+}
+
+form.subscribe input {
+  height: 35px;
+  width: 220px;
+  margin: 8px 0px;
+  border: none;
+  outline: none;
+  padding: 6px;
+  font-size: 14px;
+}
+
+form.subscribe .btn {
+  height: 35px;
+  background: var(--primary-compl-color);
+  border: none;
+  padding: 0px 6px;
+  margin: 8px 0px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.number {
+  font-family: var(--secondary-font-family);
+}
+/* End of the Footer's CSS */
+
+/* Subscribe */
+#subscribe .container {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #f5f5f5;
+  border-top: 2px solid #ffffff;
+  text-align: center;
+}
+
+/* responsiveness below */
+@media only screen and (min-width:900px) {
+
+	#flex-container {
+	  display: flex;
+	  justify-content: space-around;
+	}
+
+	footer .footer_container {
+	display: flex;
+	width:100%;
+	justify-content: space-around;
+  }
+
+
+  #confirmation-page .container {
+	flex-direction: row;
+	justify-content: space-between;
+  }
+
+  #confirmation-page .container .col-01, #confirmation-page .container .col-02 {
+	flex-basis: 49%;
+  }
+
+  .container4progress{
+	width:40%;
+  }
+
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapperr">
+		<div id="topbar-container">
+	  <a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+	  <div id="topbar-right-container">
+		<button id="topbar-member-login-btn" type="button">
+		  <img src="../../static/account_icon.svg">
+		  Member sign in
+		</button>
+		<a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+		  BOOK NOW
+		</a>
+		<button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+		  <div class="btn-line"></div>
+		  <div class="btn-line"></div>
+		  <div class="btn-line"></div>
+		</button>
+	  </div>
+	  <div id="navigation-outer-darken"></div>
+	  <div id="navigation-container">
+		<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+		  <button type="button">ROOMS</button>
+		  <div class="navigation-section-element">
+			<a href="./room_landing_page.html">ROOMS</a>
+			<a href="./suite_landing_page.html">SUITES</a>
+		  </div>
+		</div>
+		<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+		  <button type="button">DINING</button>
+		  <div class="navigation-section-element">
+			<a href="./restaurants.html">DAWN</a>
+			<a href="./reservations.html">RESERVATIONS</a>
+		  </div>
+		</div>
+		<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+		  <button type="button">EVENTS</button>
+		  <div class="navigation-section-element">
+			<a href="./event_venue.html">VENUE</a>
+			<a href="./event_wedding.html">WEDDING</a>
+			<a href="./event_corporate.html">CORPORATE</a>
+			<a href="./event_inquiry.html">INQUIRY</a>
+		  </div>
+		</div>
+		<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+		  <button type="button">FACILITIES</button>
+		  <div class="navigation-section-element">
+			<a href="./facilities.html">FACILITIES</a>
+			<a href="./facilities_booking.html">BOOKING</a>
+		  </div>
+		</div>
+		<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+		  <button type="button">OTHERS</button>
+		  <div class="navigation-section-element">
+			<a href="./promotions.html">PROMOTIONS</a>
+			<a href="./contact_us.html">CONTACT US</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  <script>
+  //FORM VALIDATION
+  function validateForm(){
+	let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+	alert("Please indicate your first name.");
+	fname.style.backgroundColor ="#FFA07A";
+	return false;
+  };
+	let y = document.forms["myForm"]["lname"].value;
+  if (y == "") {
+	alert("Please indicate your last name.");
+	lname.style.backgroundColor="#FFA07A";
+	return false;
+  };
+  let a = document.forms["myForm"]["tel"].value;
+  if (a == "") {
+	alert("Please indicate your phone number.");
+	tel.style.backgroundColor="#FFA07A";
+	return false;
+  };
+  let b = document.forms["myForm"]["email"].value;
+  if (b == "") {
+	alert("Please indicate your email address.");
+	email.style.backgroundColor="#FFA07A";
+	return false;
+  };
+  let c = document.forms["myForm"]["cardname"].value;
+  if (c == "") {
+	alert("Please indicate your Card name.");
+	cardname.style.backgroundColor="#FFA07A";
+	return false;
+  };
+
+  let d = document.forms["myForm"]["creditcardnumber"].value;
+  if (d == "") {
+	alert("Please indicate your credit card number.");
+	creditcardnumber.style.backgroundColor="#FFA07A";
+	return false;
+  };
+
+  let e = document.forms["myForm"]["cvv"].value;
+  if (e == "") {
+	alert("Please indicate your CVV.");
+	cvv.style.backgroundColor="#FFA07A";
+	return false;
+  };
+
+  let f = document.forms["myForm"]["expdate"].value;
+  if (f == "") {
+	alert("Please indicate the expiration date of card.");
+	expdate.style.backgroundColor="#FFA07A";
+	return false;
+  }
+  };
+	</script>
+  
+<div class="progress_container">
+  <div class="container4progress">
+	<div class="progress-bar">
+	  Completion Status: 60%
+	</div>
+  </div>
+</div>
+
+
+
+  <div id="confirmation-page">
+	<div class="container">
+	  <div class="col-01">
+
+		<!-- Guest Information -->
+		<form name="myForm" action="room_confirmation.html" onsubmit="return validateForm()">
+		<div class="guest-info">
+
+		  <h2>Guest Information</h2>
+
+		  <div id="titlename">
+			<label for="titlename">Title:</label>
+			<select class="titlename" name="titlename">
+			  <option value="Mr.">Mr.</option>
+			  <option value="Ms.">Ms.</option>
+			  <option value="Mrs.">Mrs.</option>
+			  <option value="Mdm">Mdm</option>
+			  <option value="Miss">Miss</option>
+			  <option value="Dr">Dr</option>
+			</select>
+		  </div>
+
+		  <div id="firstname">
+			<label for="fname">First name:</label>
+			<input type="text" id="fname" name="fname" placeholder="Cristiano">
+		  </div>
+
+		  <div id="lastname">
+			<label for="lname">Last name:</label>
+			<input type="text" id="lname" name="lname" placeholder="Ronaldo">
+		  </div>
+
+		  <div id="countries">
+			<label for="country">Country:</label>
+			<select id="country" name="country">
+			  <option value="Afghanistan">Afghanistan</option>
+			  <option value="Ć…land Islands">Ć…land Islands</option>
+			  <option value="Albania">Albania</option>
+			  <option value="Algeria">Algeria</option>
+			  <option value="American Samoa">American Samoa</option>
+			  <option value="Andorra">Andorra</option>
+			  <option value="Angola">Angola</option>
+			  <option value="Anguilla">Anguilla</option>
+			  <option value="Antarctica">Antarctica</option>
+			  <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+			  <option value="Argentina">Argentina</option>
+			  <option value="Armenia">Armenia</option>
+			  <option value="Aruba">Aruba</option>
+			  <option value="Australia">Australia</option>
+			  <option value="Austria">Austria</option>
+			  <option value="Azerbaijan">Azerbaijan</option>
+			  <option value="Bahamas">Bahamas</option>
+			  <option value="Bahrain">Bahrain</option>
+			  <option value="Bangladesh">Bangladesh</option>
+			  <option value="Barbados">Barbados</option>
+			  <option value="Belarus">Belarus</option>
+			  <option value="Belgium">Belgium</option>
+			  <option value="Belize">Belize</option>
+			  <option value="Benin">Benin</option>
+			  <option value="Bermuda">Bermuda</option>
+			  <option value="Bhutan">Bhutan</option>
+			  <option value="Bolivia">Bolivia</option>
+			  <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+			  <option value="Botswana">Botswana</option>
+			  <option value="Bouvet Island">Bouvet Island</option>
+			  <option value="Brazil">Brazil</option>
+			  <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+			  <option value="Brunei Darussalam">Brunei Darussalam</option>
+			  <option value="Bulgaria">Bulgaria</option>
+			  <option value="Burkina Faso">Burkina Faso</option>
+			  <option value="Burundi">Burundi</option>
+			  <option value="Cambodia">Cambodia</option>
+			  <option value="Cameroon">Cameroon</option>
+			  <option value="Canada">Canada</option>
+			  <option value="Cape Verde">Cape Verde</option>
+			  <option value="Cayman Islands">Cayman Islands</option>
+			  <option value="Central African Republic">Central African Republic</option>
+			  <option value="Chad">Chad</option>
+			  <option value="Chile">Chile</option>
+			  <option value="China">China</option>
+			  <option value="Christmas Island">Christmas Island</option>
+			  <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+			  <option value="Colombia">Colombia</option>
+			  <option value="Comoros">Comoros</option>
+			  <option value="Congo">Congo</option>
+			  <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+			  <option value="Cook Islands">Cook Islands</option>
+			  <option value="Costa Rica">Costa Rica</option>
+			  <option value="Cote D'ivoire">Cote D'ivoire</option>
+			  <option value="Croatia">Croatia</option>
+			  <option value="Cuba">Cuba</option>
+			  <option value="Cyprus">Cyprus</option>
+			  <option value="Czech Republic">Czech Republic</option>
+			  <option value="Denmark">Denmark</option>
+			  <option value="Djibouti">Djibouti</option>
+			  <option value="Dominica">Dominica</option>
+			  <option value="Dominican Republic">Dominican Republic</option>
+			  <option value="Ecuador">Ecuador</option>
+			  <option value="Egypt">Egypt</option>
+			  <option value="El Salvador">El Salvador</option>
+			  <option value="Equatorial Guinea">Equatorial Guinea</option>
+			  <option value="Eritrea">Eritrea</option>
+			  <option value="Estonia">Estonia</option>
+			  <option value="Ethiopia">Ethiopia</option>
+			  <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+			  <option value="Faroe Islands">Faroe Islands</option>
+			  <option value="Fiji">Fiji</option>
+			  <option value="Finland">Finland</option>
+			  <option value="France">France</option>
+			  <option value="French Guiana">French Guiana</option>
+			  <option value="French Polynesia">French Polynesia</option>
+			  <option value="French Southern Territories">French Southern Territories</option>
+			  <option value="Gabon">Gabon</option>
+			  <option value="Gambia">Gambia</option>
+			  <option value="Georgia">Georgia</option>
+			  <option value="Germany">Germany</option>
+			  <option value="Ghana">Ghana</option>
+			  <option value="Gibraltar">Gibraltar</option>
+			  <option value="Greece">Greece</option>
+			  <option value="Greenland">Greenland</option>
+			  <option value="Grenada">Grenada</option>
+			  <option value="Guadeloupe">Guadeloupe</option>
+			  <option value="Guam">Guam</option>
+			  <option value="Guatemala">Guatemala</option>
+			  <option value="Guernsey">Guernsey</option>
+			  <option value="Guinea">Guinea</option>
+			  <option value="Guinea-bissau">Guinea-bissau</option>
+			  <option value="Guyana">Guyana</option>
+			  <option value="Haiti">Haiti</option>
+			  <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+			  <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+			  <option value="Honduras">Honduras</option>
+			  <option value="Hong Kong">Hong Kong</option>
+			  <option value="Hungary">Hungary</option>
+			  <option value="Iceland">Iceland</option>
+			  <option value="India">India</option>
+			  <option value="Indonesia">Indonesia</option>
+			  <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+			  <option value="Iraq">Iraq</option>
+			  <option value="Ireland">Ireland</option>
+			  <option value="Isle of Man">Isle of Man</option>
+			  <option value="Israel">Israel</option>
+			  <option value="Italy">Italy</option>
+			  <option value="Jamaica">Jamaica</option>
+			  <option value="Japan">Japan</option>
+			  <option value="Jersey">Jersey</option>
+			  <option value="Jordan">Jordan</option>
+			  <option value="Kazakhstan">Kazakhstan</option>
+			  <option value="Kenya">Kenya</option>
+			  <option value="Kiribati">Kiribati</option>
+			  <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+			  <option value="Korea, Republic of">Korea, Republic of</option>
+			  <option value="Kuwait">Kuwait</option>
+			  <option value="Kyrgyzstan">Kyrgyzstan</option>
+			  <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+			  <option value="Latvia">Latvia</option>
+			  <option value="Lebanon">Lebanon</option>
+			  <option value="Lesotho">Lesotho</option>
+			  <option value="Liberia">Liberia</option>
+			  <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+			  <option value="Liechtenstein">Liechtenstein</option>
+			  <option value="Lithuania">Lithuania</option>
+			  <option value="Luxembourg">Luxembourg</option>
+			  <option value="Macao">Macao</option>
+			  <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+			  <option value="Madagascar">Madagascar</option>
+			  <option value="Malawi">Malawi</option>
+			  <option value="Malaysia">Malaysia</option>
+			  <option value="Maldives">Maldives</option>
+			  <option value="Mali">Mali</option>
+			  <option value="Malta">Malta</option>
+			  <option value="Marshall Islands">Marshall Islands</option>
+			  <option value="Martinique">Martinique</option>
+			  <option value="Mauritania">Mauritania</option>
+			  <option value="Mauritius">Mauritius</option>
+			  <option value="Mayotte">Mayotte</option>
+			  <option value="Mexico">Mexico</option>
+			  <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+			  <option value="Moldova, Republic of">Moldova, Republic of</option>
+			  <option value="Monaco">Monaco</option>
+			  <option value="Mongolia">Mongolia</option>
+			  <option value="Montenegro">Montenegro</option>
+			  <option value="Montserrat">Montserrat</option>
+			  <option value="Morocco">Morocco</option>
+			  <option value="Mozambique">Mozambique</option>
+			  <option value="Myanmar">Myanmar</option>
+			  <option value="Namibia">Namibia</option>
+			  <option value="Nauru">Nauru</option>
+			  <option value="Nepal">Nepal</option>
+			  <option value="Netherlands">Netherlands</option>
+			  <option value="Netherlands Antilles">Netherlands Antilles</option>
+			  <option value="New Caledonia">New Caledonia</option>
+			  <option value="New Zealand">New Zealand</option>
+			  <option value="Nicaragua">Nicaragua</option>
+			  <option value="Niger">Niger</option>
+			  <option value="Nigeria">Nigeria</option>
+			  <option value="Niue">Niue</option>
+			  <option value="Norfolk Island">Norfolk Island</option>
+			  <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+			  <option value="Norway">Norway</option>
+			  <option value="Oman">Oman</option>
+			  <option value="Pakistan">Pakistan</option>
+			  <option value="Palau">Palau</option>
+			  <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+			  <option value="Panama">Panama</option>
+			  <option value="Papua New Guinea">Papua New Guinea</option>
+			  <option value="Paraguay">Paraguay</option>
+			  <option value="Peru">Peru</option>
+			  <option value="Philippines">Philippines</option>
+			  <option value="Pitcairn">Pitcairn</option>
+			  <option value="Poland">Poland</option>
+			  <option value="Portugal">Portugal</option>
+			  <option value="Puerto Rico">Puerto Rico</option>
+			  <option value="Qatar">Qatar</option>
+			  <option value="Reunion">Reunion</option>
+			  <option value="Romania">Romania</option>
+			  <option value="Russian Federation">Russian Federation</option>
+			  <option value="Rwanda">Rwanda</option>
+			  <option value="Saint Helena">Saint Helena</option>
+			  <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+			  <option value="Saint Lucia">Saint Lucia</option>
+			  <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+			  <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+			  <option value="Samoa">Samoa</option>
+			  <option value="San Marino">San Marino</option>
+			  <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+			  <option value="Saudi Arabia">Saudi Arabia</option>
+			  <option value="Senegal">Senegal</option>
+			  <option value="Serbia">Serbia</option>
+			  <option value="Seychelles">Seychelles</option>
+			  <option value="Sierra Leone">Sierra Leone</option>
+			  <option value="Singapore">Singapore</option>
+			  <option value="Slovakia">Slovakia</option>
+			  <option value="Slovenia">Slovenia</option>
+			  <option value="Solomon Islands">Solomon Islands</option>
+			  <option value="Somalia">Somalia</option>
+			  <option value="South Africa">South Africa</option>
+			  <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+			  <option value="Spain">Spain</option>
+			  <option value="Sri Lanka">Sri Lanka</option>
+			  <option value="Sudan">Sudan</option>
+			  <option value="Suriname">Suriname</option>
+			  <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+			  <option value="Swaziland">Swaziland</option>
+			  <option value="Sweden">Sweden</option>
+			  <option value="Switzerland">Switzerland</option>
+			  <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+			  <option value="Taiwan">Taiwan</option>
+			  <option value="Tajikistan">Tajikistan</option>
+			  <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+			  <option value="Thailand">Thailand</option>
+			  <option value="Timor-leste">Timor-leste</option>
+			  <option value="Togo">Togo</option>
+			  <option value="Tokelau">Tokelau</option>
+			  <option value="Tonga">Tonga</option>
+			  <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+			  <option value="Tunisia">Tunisia</option>
+			  <option value="Turkey">Turkey</option>
+			  <option value="Turkmenistan">Turkmenistan</option>
+			  <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+			  <option value="Tuvalu">Tuvalu</option>
+			  <option value="Uganda">Uganda</option>
+			  <option value="Ukraine">Ukraine</option>
+			  <option value="United Arab Emirates">United Arab Emirates</option>
+			  <option value="United Kingdom">United Kingdom</option>
+			  <option value="United States">United States</option>
+			  <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+			  <option value="Uruguay">Uruguay</option>
+			  <option value="Uzbekistan">Uzbekistan</option>
+			  <option value="Vanuatu">Vanuatu</option>
+			  <option value="Venezuela">Venezuela</option>
+			  <option value="Viet Nam">Viet Nam</option>
+			  <option value="Virgin Islands, British">Virgin Islands, British</option>
+			  <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+			  <option value="Wallis and Futuna">Wallis and Futuna</option>
+			  <option value="Western Sahara">Western Sahara</option>
+			  <option value="Yemen">Yemen</option>
+			  <option value="Zambia">Zambia</option>
+			  <option value="Zimbabwe">Zimbabwe</option>
+			</select>
+		  </div>
+
+		  <div id="countrycode">
+			<label for="countrycode">Phone Number:</label>
+			<select id="countrycode" name="countrycode">
+				<option data-countryCode="US" value="1" selected>USA (+1)</option>
+				<option data-countryCode="GB" value="44">UK (+44)</option>
+				<option data-countryCode="DZ" value="213">Algeria (+213)</option>
+				<option data-countryCode="AD" value="376">Andorra (+376)</option>
+				<option data-countryCode="AO" value="244">Angola (+244)</option>
+				<option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+				<option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+				<option data-countryCode="AR" value="54">Argentina (+54)</option>
+				<option data-countryCode="AM" value="374">Armenia (+374)</option>
+				<option data-countryCode="AW" value="297">Aruba (+297)</option>
+				<option data-countryCode="AU" value="61">Australia (+61)</option>
+				<option data-countryCode="AT" value="43">Austria (+43)</option>
+				<option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+				<option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
+				<option data-countryCode="BH" value="973">Bahrain (+973)</option>
+				<option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+				<option data-countryCode="BB" value="1246">Barbados (+1246)</option>
+				<option data-countryCode="BY" value="375">Belarus (+375)</option>
+				<option data-countryCode="BE" value="32">Belgium (+32)</option>
+				<option data-countryCode="BZ" value="501">Belize (+501)</option>
+				<option data-countryCode="BJ" value="229">Benin (+229)</option>
+				<option data-countryCode="BM" value="1441">Bermuda (+1441)</option>
+				<option data-countryCode="BT" value="975">Bhutan (+975)</option>
+				<option data-countryCode="BO" value="591">Bolivia (+591)</option>
+				<option data-countryCode="BA" value="387">Bosnia Herzegovina (+387)</option>
+				<option data-countryCode="BW" value="267">Botswana (+267)</option>
+				<option data-countryCode="BR" value="55">Brazil (+55)</option>
+				<option data-countryCode="BN" value="673">Brunei (+673)</option>
+				<option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+				<option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+				<option data-countryCode="BI" value="257">Burundi (+257)</option>
+				<option data-countryCode="KH" value="855">Cambodia (+855)</option>
+				<option data-countryCode="CM" value="237">Cameroon (+237)</option>
+				<option data-countryCode="CA" value="1">Canada (+1)</option>
+				<option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
+				<option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
+				<option data-countryCode="CF" value="236">Central African Republic (+236)</option>
+				<option data-countryCode="CL" value="56">Chile (+56)</option>
+				<option data-countryCode="CN" value="86">China (+86)</option>
+				<option data-countryCode="CO" value="57">Colombia (+57)</option>
+				<option data-countryCode="KM" value="269">Comoros (+269)</option>
+				<option data-countryCode="CG" value="242">Congo (+242)</option>
+				<option data-countryCode="CK" value="682">Cook Islands (+682)</option>
+				<option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+				<option data-countryCode="HR" value="385">Croatia (+385)</option>
+				<option data-countryCode="CY" value="90">Cyprus - North (+90)</option>
+				<option data-countryCode="CY" value="357">Cyprus - South (+357)</option>
+				<option data-countryCode="CZ" value="420">Czech Republic (+420)</option>
+				<option data-countryCode="DK" value="45">Denmark (+45)</option>
+				<option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+				<option data-countryCode="DM" value="1809">Dominica (+1809)</option>
+				<option data-countryCode="DO" value="1809">Dominican Republic (+1809)</option>
+				<option data-countryCode="EC" value="593">Ecuador (+593)</option>
+				<option data-countryCode="EG" value="20">Egypt (+20)</option>
+				<option data-countryCode="SV" value="503">El Salvador (+503)</option>
+				<option data-countryCode="GQ" value="240">Equatorial Guinea (+240)</option>
+				<option data-countryCode="ER" value="291">Eritrea (+291)</option>
+				<option data-countryCode="EE" value="372">Estonia (+372)</option>
+				<option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+				<option data-countryCode="FK" value="500">Falkland Islands (+500)</option>
+				<option data-countryCode="FO" value="298">Faroe Islands (+298)</option>
+				<option data-countryCode="FJ" value="679">Fiji (+679)</option>
+				<option data-countryCode="FI" value="358">Finland (+358)</option>
+				<option data-countryCode="FR" value="33">France (+33)</option>
+				<option data-countryCode="GF" value="594">French Guiana (+594)</option>
+				<option data-countryCode="PF" value="689">French Polynesia (+689)</option>
+				<option data-countryCode="GA" value="241">Gabon (+241)</option>
+				<option data-countryCode="GM" value="220">Gambia (+220)</option>
+				<option data-countryCode="GE" value="7880">Georgia (+7880)</option>
+				<option data-countryCode="DE" value="49">Germany (+49)</option>
+				<option data-countryCode="GH" value="233">Ghana (+233)</option>
+				<option data-countryCode="GI" value="350">Gibraltar (+350)</option>
+				<option data-countryCode="GR" value="30">Greece (+30)</option>
+				<option data-countryCode="GL" value="299">Greenland (+299)</option>
+				<option data-countryCode="GD" value="1473">Grenada (+1473)</option>
+				<option data-countryCode="GP" value="590">Guadeloupe (+590)</option>
+				<option data-countryCode="GU" value="671">Guam (+671)</option>
+				<option data-countryCode="GT" value="502">Guatemala (+502)</option>
+				<option data-countryCode="GN" value="224">Guinea (+224)</option>
+				<option data-countryCode="GW" value="245">Guinea - Bissau (+245)</option>
+				<option data-countryCode="GY" value="592">Guyana (+592)</option>
+				<option data-countryCode="HT" value="509">Haiti (+509)</option>
+				<option data-countryCode="HN" value="504">Honduras (+504)</option>
+				<option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+				<option data-countryCode="HU" value="36">Hungary (+36)</option>
+				<option data-countryCode="IS" value="354">Iceland (+354)</option>
+				<option data-countryCode="IN" value="91">India (+91)</option>
+				<option data-countryCode="ID" value="62">Indonesia (+62)</option>
+				<option data-countryCode="IQ" value="964">Iraq (+964)</option>
+				<option data-countryCode="IE" value="353">Ireland (+353)</option>
+				<option data-countryCode="IL" value="972">Israel (+972)</option>
+				<option data-countryCode="IT" value="39">Italy (+39)</option>
+				<option data-countryCode="JM" value="1876">Jamaica (+1876)</option>
+				<option data-countryCode="JP" value="81">Japan (+81)</option>
+				<option data-countryCode="JO" value="962">Jordan (+962)</option>
+				<option data-countryCode="KZ" value="7">Kazakhstan (+7)</option>
+				<option data-countryCode="KE" value="254">Kenya (+254)</option>
+				<option data-countryCode="KI" value="686">Kiribati (+686)</option>
+				<option data-countryCode="KR" value="82">Korea - South (+82)</option>
+				<option data-countryCode="KW" value="965">Kuwait (+965)</option>
+				<option data-countryCode="KG" value="996">Kyrgyzstan (+996)</option>
+				<option data-countryCode="LA" value="856">Laos (+856)</option>
+				<option data-countryCode="LV" value="371">Latvia (+371)</option>
+				<option data-countryCode="LB" value="961">Lebanon (+961)</option>
+				<option data-countryCode="LS" value="266">Lesotho (+266)</option>
+				<option data-countryCode="LR" value="231">Liberia (+231)</option>
+				<option data-countryCode="LY" value="218">Libya (+218)</option>
+				<option data-countryCode="LI" value="417">Liechtenstein (+417)</option>
+				<option data-countryCode="LT" value="370">Lithuania (+370)</option>
+				<option data-countryCode="LU" value="352">Luxembourg (+352)</option>
+				<option data-countryCode="MO" value="853">Macao (+853)</option>
+				<option data-countryCode="MK" value="389">Macedonia (+389)</option>
+				<option data-countryCode="MG" value="261">Madagascar (+261)</option>
+				<option data-countryCode="MW" value="265">Malawi (+265)</option>
+				<option data-countryCode="MY" value="60">Malaysia (+60)</option>
+				<option data-countryCode="MV" value="960">Maldives (+960)</option>
+				<option data-countryCode="ML" value="223">Mali (+223)</option>
+				<option data-countryCode="MT" value="356">Malta (+356)</option>
+				<option data-countryCode="MH" value="692">Marshall Islands (+692)</option>
+				<option data-countryCode="MQ" value="596">Martinique (+596)</option>
+				<option data-countryCode="MR" value="222">Mauritania (+222)</option>
+				<option data-countryCode="YT" value="269">Mayotte (+269)</option>
+				<option data-countryCode="MX" value="52">Mexico (+52)</option>
+				<option data-countryCode="FM" value="691">Micronesia (+691)</option>
+				<option data-countryCode="MD" value="373">Moldova (+373)</option>
+				<option data-countryCode="MC" value="377">Monaco (+377)</option>
+				<option data-countryCode="MN" value="976">Mongolia (+976)</option>
+				<option data-countryCode="MS" value="1664">Montserrat (+1664)</option>
+				<option data-countryCode="MA" value="212">Morocco (+212)</option>
+				<option data-countryCode="MZ" value="258">Mozambique (+258)</option>
+				<option data-countryCode="MN" value="95">Myanmar (+95)</option>
+				<option data-countryCode="NA" value="264">Namibia (+264)</option>
+				<option data-countryCode="NR" value="674">Nauru (+674)</option>
+				<option data-countryCode="NP" value="977">Nepal (+977)</option>
+				<option data-countryCode="NL" value="31">Netherlands (+31)</option>
+				<option data-countryCode="NC" value="687">New Caledonia (+687)</option>
+				<option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+				<option data-countryCode="NI" value="505">Nicaragua (+505)</option>
+				<option data-countryCode="NE" value="227">Niger (+227)</option>
+				<option data-countryCode="NG" value="234">Nigeria (+234)</option>
+				<option data-countryCode="NU" value="683">Niue (+683)</option>
+				<option data-countryCode="NF" value="672">Norfolk Islands (+672)</option>
+				<option data-countryCode="NP" value="670">Northern Marianas (+670)</option>
+				<option data-countryCode="NO" value="47">Norway (+47)</option>
+				<option data-countryCode="OM" value="968">Oman (+968)</option>
+				<option data-countryCode="PK" value="92">Pakistan (+92)</option>
+				<option data-countryCode="PW" value="680">Palau (+680)</option>
+				<option data-countryCode="PA" value="507">Panama (+507)</option>
+				<option data-countryCode="PG" value="675">Papua New Guinea (+675)</option>
+				<option data-countryCode="PY" value="595">Paraguay (+595)</option>
+				<option data-countryCode="PE" value="51">Peru (+51)</option>
+				<option data-countryCode="PH" value="63">Philippines (+63)</option>
+				<option data-countryCode="PL" value="48">Poland (+48)</option>
+				<option data-countryCode="PT" value="351">Portugal (+351)</option>
+				<option data-countryCode="PR" value="1787">Puerto Rico (+1787)</option>
+				<option data-countryCode="QA" value="974">Qatar (+974)</option>
+				<option data-countryCode="RE" value="262">Reunion (+262)</option>
+				<option data-countryCode="RO" value="40">Romania (+40)</option>
+				<option data-countryCode="RU" value="7">Russia (+7)</option>
+				<option data-countryCode="RW" value="250">Rwanda (+250)</option>
+				<option data-countryCode="SM" value="378">San Marino (+378)</option>
+				<option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)</option>
+				<option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+				<option data-countryCode="SN" value="221">Senegal (+221)</option>
+				<option data-countryCode="CS" value="381">Serbia (+381)</option>
+				<option data-countryCode="SC" value="248">Seychelles (+248)</option>
+				<option data-countryCode="SL" value="232">Sierra Leone (+232)</option>
+				<option data-countryCode="SG" value="65">Singapore (+65)</option>
+				<option data-countryCode="SK" value="421">Slovak Republic (+421)</option>
+				<option data-countryCode="SI" value="386">Slovenia (+386)</option>
+				<option data-countryCode="SB" value="677">Solomon Islands (+677)</option>
+				<option data-countryCode="SO" value="252">Somalia (+252)</option>
+				<option data-countryCode="ZA" value="27">South Africa (+27)</option>
+				<option data-countryCode="ES" value="34">Spain (+34)</option>
+				<option data-countryCode="LK" value="94">Sri Lanka (+94)</option>
+				<option data-countryCode="SH" value="290">St. Helena (+290)</option>
+				<option data-countryCode="KN" value="1869">St. Kitts (+1869)</option>
+				<option data-countryCode="SC" value="1758">St. Lucia (+1758)</option>
+				<option data-countryCode="SR" value="597">Suriname (+597)</option>
+				<option data-countryCode="SD" value="249">Sudan (+249)</option>
+				<option data-countryCode="SZ" value="268">Swaziland (+268)</option>
+				<option data-countryCode="SE" value="46">Sweden (+46)</option>
+				<option data-countryCode="CH" value="41">Switzerland (+41)</option>
+				<option data-countryCode="TW" value="886">Taiwan (+886)</option>
+				<option data-countryCode="TJ" value="992">Tajikistan (+992)</option>
+				<option data-countryCode="TH" value="66">Thailand (+66)</option>
+				<option data-countryCode="TG" value="228">Togo (+228)</option>
+				<option data-countryCode="TO" value="676">Tonga (+676)</option>
+				<option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)</option>
+				<option data-countryCode="TN" value="216">Tunisia (+216)</option>
+				<option data-countryCode="TR" value="90">Turkey (+90)</option>
+				<option data-countryCode="TM" value="993">Turkmenistan (+993)</option>
+				<option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
+				<option data-countryCode="TV" value="688">Tuvalu (+688)</option>
+				<option data-countryCode="UG" value="256">Uganda (+256)</option>
+				<option data-countryCode="UA" value="380">Ukraine (+380)</option>
+				<option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+				<option data-countryCode="UY" value="598">Uruguay (+598)</option>
+				<option data-countryCode="UZ" value="998">Uzbekistan (+998)</option>
+				<option data-countryCode="VU" value="678">Vanuatu (+678)</option>
+				<option data-countryCode="VA" value="379">Vatican City (+379)</option>
+				<option data-countryCode="VE" value="58">Venezuela (+58)</option>
+				<option data-countryCode="VN" value="84">Vietnam (+84)</option>
+				<option data-countryCode="VG" value="1">Virgin Islands - British (+1)</option>
+				<option data-countryCode="VI" value="1">Virgin Islands - US (+1)</option>
+				<option data-countryCode="WF" value="681">Wallis &amp; Futuna (+681)</option>
+				<option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+				<option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
+				<option data-countryCode="ZM" value="260">Zambia (+260)</option>
+				<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+			</select>
+			<input type="text" id="tel" name="tel" placeholder="12345678">
+		  </div>
+
+		  <div id="emailadd">
+			<label for="email">Email Address:</label>
+			<input type="text" id="email" name="email" placeholder="john@example.com">
+		  </div>
+
+		  <div id="preferences">
+			<label>Room Preferences:</label>
+			<textarea name="message" rows="4" cols="43" placeholder="Rooms nearer to the elevator etc."></textarea>
+		  </div>
+
+		  <div id="disclaimer">
+			<p class="disclaimerheading">DISCLAIMER:</p>
+			<i> Once you enter your email address/phone number, The Dusk may use it to contact you for further updates and follow up on your hotel reservation.</i>
+		  </div>
+
+		</div>
+
+		<!-- Add-ons -->
+		<div class="add-ons">
+		  <h3>Available Add-ons</h3>
+		  <p>Further enjoy your stay by upgrading your room for just $40.00++ more per night.</p>
+		  <a href="#"><button type="button" class="upgradebtn">Upgrade Room</button></a>
+		</div>
+
+		<!-- Payments -->
+<!-- partial:index.partial.html -->
+<div class="wrapper" id="app">
+  <div class="card-form">
+	<div class="card-list">
+	  <div class="card-item" v-bind:class="{ '-active' : isCardFlipped }">
+		<div class="card-item__side -front">
+		  <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
+		  <div class="card-item__cover">
+			<img
+			v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+		  </div>
+		  
+		  <div class="card-item__wrapper">
+			<div class="card-item__top">
+			  <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
+			  <div class="card-item__type">
+				<transition name="slide-fade-up">
+				  <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
+				</transition>
+			  </div>
+			</div>
+			<label for="cardNumber" class="card-item__number" ref="cardNumber">
+			  <template v-if="getCardType === 'amex'">
+			   <span v-for="(n, $index) in amexCardMask" :key="$index">
+				<transition name="slide-fade-up">
+				  <div
+					class="card-item__numberItem"
+					v-if="$index > 4 && $index < 14 && cardNumber.length > $index && n.trim() !== ''"
+				  >*</div>
+				  <div class="card-item__numberItem"
+					:class="{ '-active' : n.trim() === '' }"
+					:key="$index" v-else-if="cardNumber.length > $index">
+					{{cardNumber[$index]}}
+				  </div>
+				  <div
+					class="card-item__numberItem"
+					:class="{ '-active' : n.trim() === '' }"
+					v-else
+					:key="$index + 1"
+				  >{{n}}</div>
+				</transition>
+			  </span>
+			  </template>
+
+			  <template v-else>
+				<span v-for="(n, $index) in otherCardMask" :key="$index">
+				  <transition name="slide-fade-up">
+					<div
+					  class="card-item__numberItem"
+					  v-if="$index > 4 && $index < 15 && cardNumber.length > $index && n.trim() !== ''"
+					>*</div>
+					<div class="card-item__numberItem"
+					  :class="{ '-active' : n.trim() === '' }"
+					  :key="$index" v-else-if="cardNumber.length > $index">
+					  {{cardNumber[$index]}}
+					</div>
+					<div
+					  class="card-item__numberItem"
+					  :class="{ '-active' : n.trim() === '' }"
+					  v-else
+					  :key="$index + 1"
+					>{{n}}</div>
+				  </transition>
+				</span>
+			  </template>
+			</label>
+			<div class="card-item__content">
+			  <label for="cardName" class="card-item__info" ref="cardName">
+				<div class="card-item__holder">Card Holder</div>
+				<transition name="slide-fade-up">
+				  <div class="card-item__name" v-if="cardName.length" key="1">
+					<transition-group name="slide-fade-right">
+					  <span class="card-item__nameItem" v-for="(n, $index) in cardName.replace(/\s\s+/g, ' ')" v-if="$index === $index" v-bind:key="$index + 1">{{n}}</span>
+					</transition-group>
+				  </div>
+				  <div class="card-item__name" v-else key="2">Full Name</div>
+				</transition>
+			  </label>
+			  <div class="card-item__date" ref="cardDate">
+				<label for="cardMonth" class="card-item__dateTitle">Expires</label>
+				<label for="cardMonth" class="card-item__dateItem">
+				  <transition name="slide-fade-up">
+					<span v-if="cardMonth" v-bind:key="cardMonth">{{cardMonth}}</span>
+					<span v-else key="2">MM</span>
+				  </transition>
+				</label>
+				/
+				<label for="cardYear" class="card-item__dateItem">
+				  <transition name="slide-fade-up">
+					<span v-if="cardYear" v-bind:key="cardYear">{{String(cardYear).slice(2,4)}}</span>
+					<span v-else key="2">YY</span>
+				  </transition>
+				</label>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="card-item__side -back">
+		  <div class="card-item__cover">
+			<img
+			v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+		  </div>
+		  <div class="card-item__band"></div>
+		  <div class="card-item__cvv">
+			  <div class="card-item__cvvTitle">CVV</div>
+			  <div class="card-item__cvvBand">
+				<span v-for="(n, $index) in cardCvv" :key="$index">
+				  *
+				</span>
+
+			</div>
+			  <div class="card-item__type">
+				  <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="card-form__inner">
+	  <div class="card-input">
+		<label for="cardNumber" class="card-input__label">Card Number</label>
+		<input type="text" id="cardNumber" class="card-input__input" v-mask="generateCardNumberMask" v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber" autocomplete="off">
+	  </div>
+	  <div class="card-input">
+		<label for="cardName" class="card-input__label">Card Holders</label>
+		<input type="text" id="cardName" class="card-input__input" v-model="cardName" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardName" autocomplete="off">
+	  </div>
+	  <div class="card-form__row">
+		<div class="card-form__col">
+		  <div class="card-form__group">
+			<label for="cardMonth" class="card-input__label">Expiration Date</label>
+			<select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+			  <option value="" disabled selected>Month</option>
+			  <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth" v-bind:key="n">
+				  {{n < 10 ? '0' + n : n}}
+			  </option>
+			</select>
+			<select class="card-input__input -select" id="cardYear" v-model="cardYear" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+			  <option value="" disabled selected>Year</option>
+			  <option v-bind:value="$index + minCardYear" v-for="(n, $index) in 12" v-bind:key="n">
+				  {{$index + minCardYear}}
+			  </option>
+			</select>
+		  </div>
+		</div>
+		<div class="card-form__col -cvv">
+		  <div class="card-input">
+			<label for="cardCvv" class="card-input__label">CVV</label>
+			<input type="text" class="card-input__input" id="cardCvv" v-mask="'####'" maxlength="4" v-model="cardCvv" v-on:focus="flipCard(true)" v-on:blur="flipCard(false)" autocomplete="off">
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+  
+</div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="../../js/views/checkout.js"></script>
+
+		<!-- T&C -->
+		<div class="terms-and-conditions">
+		  <h3>Terms & Conditions</h3>
+		  <p>
+			<input type="checkbox" id="condition1" name="condition1" value="condition1">
+			<label for="condition1"> I have read and accepted the terms & conditions </label>
+		  </p>
+		  <p>
+			<input type="checkbox" id="condition2" name="condition2" value="condition2">
+			<label for="condition2">I wish to receive updates, preferably personalised content that i may be interested in via text-mesaging, emails, websites and etc.</label>
+		  </p>
+		  <p>
+			<input type="checkbox" id="condition3" name="condition3" value="condition3">
+			<label for="condition3">I agree to The Dusk processing my personal data as set out to fulfill my request and I understand that i may visit The Dusk Data Protection Office if there are any updates or withdrawal of data.</label>
+		  </p>
+		  <i><span>Important note</span>: You may cancel your booking 1 (one) week prior to your actual stay.</i>
+		</div>
+
+	  </div>
+
+	  <div class="col-02">
+
+		<!-- Bookinng Details -->
+		<div class="booking-details">
+
+		  <h2>Rooftop Room</h2>
+		  <hr>
+		  <picture>
+			<source media="(min-width:650px)" srcset="../../static/rooms/roofbedroom.png" >
+			<img src="../../static/rooms/roofbedroom.png" alt="premiersuite" class="rooms">
+		  </picture>
+
+		  <div class="dates">
+			<div class="checkin">
+			  <label for="checkin">Check-in Date: <b><span id="checkinResult"></span></b></label>
+
+			</div>
+			<div class="checkout">
+			  <label for="checkout">Check-out Date:<b><span id="checkoutResult"></span></b></label>
+			</div>
+		  </div>
+		  <div class="group">
+			<div class="adult">
+			  <label for="adultquantity" class="adults">No. of Adults:<b><span id="adultsResult"></span></b></label>
+			</div>
+			<div class="child">
+			  <label for="childquantity" class="children">No. of Children:<b><span id="childrenResult"></span></b></label>
+			</div>
+			<script>
+			  localStorage.getItem("booking");
+			  document.getElementById("checkinResult").innerHTML = localStorage.getItem("ddCheckin");
+			  document.getElementById("checkoutResult").innerHTML = localStorage.getItem("ddCheckout");
+			  document.getElementById("adultsResult").innerHTML = localStorage.getItem("txtAdults");
+			  document.getElementById("childrenResult").innerHTML = localStorage.getItem("txtChildren");
+			</script>
+		  </div>
+		  <hr>
+		  <div class="take-notes">
+			<h3>Take Note:</h3>
+			<p>Upon room reservation confirmation, guests are required to book their check-in time via SMS. A notification will be sent to you via SMS or Email within 24 hours of your arrival to book slots for your preferred time /day to have access to the <i>Infinity Pool</i>.</p>
+			<p>For further benefits, such as complementary breakfast in bed, exclusive excess to places around the hotel which may not be included in your current package, please contact <i>+65 6798 8789</i> for further upgrading to your package</p>
+		  </div>
+		  <hr>
+		  <div class="price-breakdown">
+			<h3>Price Breakdown</h3>
+			<p class="price-room">Rooftop Room <span>$738.21</span></p>
+			<p class="price-tax">Tax & Service Charges <span>$360.55<span></p>
+			<hr>
+			<p class="price-total">Total <span>$1098.76<span></p>
+		  </div>
+		  <i><p class="fyi">For your information, you will only be charged after your stay. Hence, the stated price is exclusive of any internal additions to the package such as complementary breakfast and other promotions that have been purchased during your stay.</p></i>
+		  <br>
+		  <input type="submit" value="Proceed" class="proceedbtn">
+		</form>
+	  </div>
+
+	</div>
+
+  </div>
+  </div>
+
+<!-- footer -->
+<div id="footer">
+	  <h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+	  <h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+	  <hr>
+
+	  <div id="footer-details">
+		<div id="footer-contact-container" class="footer-section-container">
+		  <h2>GENERAL ENQUIRIES</h2>
+		  <p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+		  <p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+		</div>
+		<div class="footer-section-container">
+		  <h2>CHECK IN / OUT</h2>
+		  <p>Check in from: 10:00</p>
+		  <p>Check out before 12:00</p>
+		</div>
+		<div class="footer-section-container">
+		  <h2>CONNECT WITH US</h2>
+		  <div id="footer-socials-container">
+			<div class="footer-socials-hover-grow-container">
+			  <a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+			</div>
+			<div class="footer-socials-hover-grow-container">
+			  <a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+			</div>
+			<div class="footer-socials-hover-grow-container">
+			  <a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</body>
+</html>

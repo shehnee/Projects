@@ -1,0 +1,678 @@
+
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <title>ROOM BOOKING | The Dusk Hotel</title>
+<link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../../css/includes/topbar.css">
+<link rel="stylesheet" href="../../css/includes/footer.css">
+<link rel="stylesheet" href="../../css/includes/tags.css">
+  <style>
+
+/* ROOT STYLES */
+:root {
+  --primary-color: #faf5e2; /* golden yellow */
+  --primary-compl-color: #bd9526; /* darker yellow, slightly more gold */
+  --secondary-color: #e0d7c7; /* khaki */
+  --secondary-compl-color: #f5f3ef; /* peach white */
+  --tertiary-color: #56453e; /* pruce */
+
+  --black-color: #211c1d;
+
+  /* fonts */
+  --primary-font-family: 'reforma-1918', serif;
+  --primary-font-family-bold: 'reforma-1918-bold', serif;
+  --secondary-font-family: 'Poppins', sans-serif;
+  --secondary-font-family-sbold: 'Poppins-SBOLD', sans-serif;
+  --secondary-font-family-bold: 'Poppins-BOLD', sans-serif;
+}          
+  /* font imports  */
+            @font-face {
+                font-family: 'Poppins';
+                src: url("../../static/fonts/Poppins/Poppins-Regular.ttf");
+            }
+            @font-face {
+                font-family: 'Poppins-SBOLD';
+                src: url("../../static/fonts/Poppins/Poppins-SemiBold.ttf");
+            }
+            @font-face {
+                font-family: 'Poppins-BOLD';
+                src: url("../../static/fonts/Poppins/Poppins-Bold.ttf");
+            }
+            @font-face {
+                font-family: 'Reforma-1918';
+                src: url("../../static/fonts/reforma-1918-cufonfonts/Reforma1918-Blanca.otf");
+            }
+            @font-face {
+                font-family: 'Reforma-1918-BOLD';
+                src: url("../../static/fonts/reforma-1918-cufonfonts/Reforma1918-Negra.otf");
+            }
+html {
+    width:100%;
+    place-items: center;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    width: 100% ;
+    max-width: 100%;
+    background-color: var(--secondary-compl-color);
+    overscroll-behavior: none;
+    transition: 0.3s ease-out;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+* {
+  box-sizing: border-box;
+  max-width:100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.container {
+  width: 100%;
+}
+
+
+/* hero banner */
+#front-banner .container {
+  height: 110vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) , url(https://img.freepik.com/free-photo/luxury-classic-modern-bedroom-suite-hotel_105762-1787.jpg?w=1800&t=st=1688888075~exp=1688888675~hmac=5301bfe6d41be7f4eb124ab77a7d5d745b8daa0b15215e10f08a813a30b2b715) no-repeat 100% 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
+#front-banner h1 {
+  font-family: var(--primary-font-family-bold);
+  color: var(--primary-color);
+  font-size: 3.8rem;
+  text-align: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* introduction banner */
+#introduction .container {
+  background-color: var(--secondary-compl-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#introduction h2 {
+  font-family: var(--primary-font-family-bold);
+  color: var(--tertiary-color);
+  font-size: 38px;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding-bottom: 24px;
+}
+
+#introduction .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+.intro-para {
+  font-family: var(--secondary-font-family-sbold);
+  color: var(--black-color);
+}
+
+#introduction .description p {
+  padding-bottom: 24px;
+}
+
+#introduction .container{
+  margin-bottom: -35px;
+}
+
+
+#calendar .container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/* Slideshow container */
+#calendar .slideshow-container {
+  position: relative;
+}
+
+/* Next & previous buttons */
+#calendar .prev, #calendar .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -1%;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+#calendar .prev {
+  left: 0;
+}
+
+/* Position the "next button" to the right */
+#calendar .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+#calendar .prev:hover, #calendar .next:hover {
+  background-color: #f1f1f1;
+  color: #bd9526;
+}
+
+#calendar h2 {
+  font-size: 2rem;
+  font-family: var(--primary-font-family-bold);
+  text-transform: capitalize;
+  padding-bottom: 20px;
+}
+
+#calendar label {
+  font-family: var(--secondary-font-family-sbold);
+}
+#calendar input {
+  font-family: var(--secondary-font-family-sbold);
+}
+
+#calendar .calendar-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--secondary-compl-color);
+  height:450px;
+}
+
+#calendar .calendar-container hr {
+  height: 3px;
+  width: 30%;
+  color: var(--primary-compl-color);
+  background-color: var(--primary-compl-color);
+  border: var(--primary-compl-color);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+#calendar .calendar-container .dates, #calendar .calendar-container div.group{
+  display: flex;
+  flex-direction: column;
+}
+
+
+#calendar .group{
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+#calendar .calendar-container .dates div, #calendar .calendar-container .group div {
+  margin-bottom: 4px;
+}
+
+.availabilitybtn {
+  background-color: var(--primary-compl-color);
+  color: var(--primary-color);
+  border: 5px solid var(--primary-compl-color);
+  font-family: var(--secondary-font-family-sbold);
+  line-height: 40px;
+  padding: 0 24px;
+  transition: all .2s;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+.availabilitybtn:hover {
+  color: var(--primary-color);
+  background-color: var(--tertiary-color);
+  border: 5px solid var(--tertiary-color);
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+
+  #calendar .container {
+    flex-direction: row;
+  }
+
+  #calendar .slideshow-container {
+    flex-basis: 60%;
+  }
+
+  #calendar .calendar-container {
+    flex-basis: 40%;
+    justify-content: center;
+  }
+
+
+  #calendar .calendar-container .dates {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #calendar .calendar-container .dates div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  footer .footer_container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+
+/* Footer */
+footer .footer_container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--secondary-compl-color);
+}
+
+.title2{
+    margin:auto;
+    font-size: 25px;
+    font-family: var(--primary-font-family-bold);
+    text-align: center;
+    letter-spacing: 1px;
+}
+.title3{
+    font-family: var(--secondary-font-family);
+    font-size:18px;
+    text-align: center;
+    margin:auto;
+}
+
+footer a {
+    /* font-family: var(--primary-font-family); */
+    /* second option ^ */
+    font-family: var(--secondary-font-family);
+    text-decoration: none;
+    transition: all .2s;
+    color: #000000;
+}
+
+footer a:hover {
+    color: var(--primary-compl-color);
+}
+
+footer h4 {
+    font-family: var(--primary-font-family-bold);
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+footer h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: var(--primary-compl-color);
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+footer ul {
+  list-style:none;
+  width:100%;
+  padding:0;
+}
+
+footer ul li {
+  line-height: 1.8em;
+}
+
+.thedusk, .quicklinks, .hotel-reservations, .restaurant-reservations {
+  margin-bottom: 32px;
+}
+
+footer .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: var(--primary-compl-color);
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  transition: all 0.2s;
+}
+
+footer .social-links a:hover {
+  color: var(--tertiary-color);
+  background-color: var(--primary-color);
+}
+
+/* Subscribe */
+#subscribe .subscribe_container {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: var(--secondary-compl-color);
+  border-top: 2px solid #ffffff;
+  text-align: center;
+}
+#subscribe h2 {
+  font-family: var(--primary-font-family-bold);
+}
+#subscribe p {
+  font-family: var(--secondary-font-family);
+}
+
+form.subscribe input {
+  height: 35px;
+  width: 220px;
+  margin: 8px 0px;
+  border: none;
+  outline: none;
+  padding: 6px;
+  font-size: 14px;
+}
+
+form.subscribe .btn {
+  height: 35px;
+  background: var(--primary-compl-color);
+  border: none;
+  padding: 0px 6px;
+  margin: 8px 0px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+/* responsiveness below */
+
+
+
+  </style>
+</head>
+
+<body>
+  <script>
+
+  //FORM VALIDATION
+  function validateForm(){
+    let x = document.forms["myForm"]["checkin"].value;
+  if (x == "") {
+    alert("Start Date must be indicated!");
+    checkin.style.backgroundColor="#FFA07A";
+    return false;
+    }
+
+    let y = document.forms["myForm"]["checkout"].value;
+  if (y == "") {
+    alert("End Date must be indicated!");
+    checkout.style.backgroundColor="#FFA07A";
+    return false;
+    }
+
+    var booking = {};
+    booking.ddCheckin = document.getElementById("checkin").value;
+    booking.ddCheckout = document.getElementById("checkout").value;
+    booking.txtAdults = document.getElementById("adultquantity").value;
+    booking.txtChildren = document.getElementById("childquantity").value;
+    localStorage.setItem("booking");
+
+}
+
+  </script>
+<div class="wrapper">
+<div id="topbar-container">
+            <a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+            <div id="topbar-right-container">
+                <button id="topbar-member-login-btn" type="button">
+                    <img src="../../static/account_icon.svg">
+                    Member sign in
+                </button>
+                <a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+                    BOOK NOW
+                </a>
+                <button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+                    <div class="btn-line"></div>
+                    <div class="btn-line"></div>
+                    <div class="btn-line"></div>
+                </button>
+            </div>
+            <div id="navigation-outer-darken"></div>
+            <div id="navigation-container">
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">ROOMS</button>
+                    <div class="navigation-section-element">
+                        <a href="./room_landing_page.html">ROOMS</a>
+                        <a href="./suite_landing_page.html">SUITES</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">DINING</button>
+                    <div class="navigation-section-element">
+                        <a href="./restaurants.html">DAWN</a>
+                        <a href="./reservations.html">RESERVATIONS</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">EVENTS</button>
+                    <div class="navigation-section-element">
+                        <a href="./event_venue.html">VENUE</a>
+                        <a href="./event_wedding.html">WEDDING</a>
+                        <a href="./event_corporate.html">CORPORATE</a>
+                        <a href="./event_inquiry.html">INQUIRY</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">FACILITIES</button>
+                    <div class="navigation-section-element">
+                        <a href="./facilities.html">FACILITIES</a>
+                        <a href="./facilities_booking.html">BOOKING</a>
+                    </div>
+                </div>
+                <div class="navigation-section-container" onclick="this.classList.toggle('active')">
+                    <button type="button">OTHERS</button>
+                    <div class="navigation-section-element">
+                        <a href="./promotions.html">PROMOTIONS</a>
+                        <a href="./contact_us.html">CONTACT US</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <!-- Banner -->
+  <div id="front-banner">
+    <div class="container">
+      <h1 class="title">Room Booking</h1>
+    </div>
+    </div>
+
+  <!-- Introduction -->
+  <div id="introduction">
+    <div class="container">
+      <h2 class="title">Book your stay with us!</h2>
+      <div class="description">
+        <hr>
+        <p class="intro-para">
+          Book your stay here with The Dusk Hotel. 
+          <br> 
+          Enjoy exclusive promotions and benefits when you book on our website. 
+          <br>
+          Getaway in luxury and comfort, enjoy a breathtaking view with comfort. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="calendar">
+    <div class="container">
+      
+      <div class="slideshow-container">
+
+        <div class="mySlides1">
+          <img src="https://s7d2.scene7.com/is/image/ritzcarlton/rc_chicago_lobby_v1a?$LargeViewport100pct$" style="width:100%; height:450px;">
+        </div>
+        <div class="mySlides1">
+          <img src="https://s7d2.scene7.com/is/image/ritzcarlton/RCCHICA_00400?$LargeViewport100pct$" style="width:100%; height:450px;">
+        </div>
+        <div class="mySlides1">
+          <img src="https://media.architecturaldigest.com/photos/5c6452972a81d22dc23c83f9/16:9/w_2991,h_1682,c_limit/Midnight%20Rambler-TX.jpg" style="width:100%; height:450px;">
+        </div>
+        <div class="mySlides1">
+          <img src="https://media.architecturaldigest.com/photos/5c6452972a81d22dc23c83f9/16:9/w_2991,h_1682,c_limit/Midnight%20Rambler-TX.jpg" style="width:100%; height:450px;">
+        </div>
+        <div class="mySlides1">
+          <img src="../../static/rooms/dusksliving.png" style="width:100%; height:450px;">
+        </div>
+        <div class="mySlides1">
+          <img src="../../static/rooms/duskbathroom.png" style="width:100%; height:450px;">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+
+      </div>
+      
+      <div class="calendar-container">
+        <h2 class="title">Booking Information</h2>
+        <hr>
+        <form name="myForm" action="./room_avail.html" onsubmit="return validateForm()" method="post">
+          <div class="dates">
+            <div class="checkin">
+              <label for="checkin">Check-in Date:</label>
+              <input type="date" id="checkin" name="checkin">
+            </div>
+            <div class="checkout">
+              <label for="checkout">Check-out Date:</label>
+              <input type="date" id="checkout" name="checkout">
+            </div>
+          </div>
+          <div class="group">
+            <div class="adult">
+              <label for="adultquantity" class="adults">No. of Adults:</label>
+              <input type="number" id="adultquantity" min="0" max="4" value="1">
+            </div>
+            <div class="child">
+              <label for="childquantity" class="children">No. of Children:</label>
+              <input type="number" id="childquantity" min="0" max="3" value="1">
+            </div>
+          </div>
+            <input type="submit" value="VIEW AVAILABILITY" class="availabilitybtn">
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+
+
+
+<!-- footer -->
+        <div id="footer">
+            <h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+            <h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+            <hr>
+
+            <div id="footer-details">
+                <div id="footer-contact-container" class="footer-section-container">
+                    <h2>GENERAL ENQUIRIES</h2>
+                    <p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+                    <p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+                </div>
+                <div class="footer-section-container">
+                    <h2>CHECK IN / OUT</h2>
+                    <p>Check in from: 10:00</p>
+                    <p>Check out before 12:00</p>
+                </div>
+                <div class="footer-section-container">
+                    <h2>CONNECT WITH US</h2>
+                    <div id="footer-socials-container">
+                        <div class="footer-socials-hover-grow-container">
+                            <a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+                        </div>
+                        <div class="footer-socials-hover-grow-container">
+                            <a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+                        </div>
+                        <div class="footer-socials-hover-grow-container">
+                            <a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <script>
+    // need help making sure that users cannot check in on previous dates
+    // (i got you)
+    // set min value constraint for date
+    var checkinInpt = document.getElementById("checkin")
+    var checkoutInpt = document.getElementById("checkout")
+    var currentDate = new Date();
+
+    // cannot rely on ISO format since it returns UTC time (denoted by Z suffix)
+    var year = currentDate.getFullYear().toString().padStart(4, "0"); // "YYYY"
+    var month = (currentDate.getMonth() +1).toString().padStart(2, "0"); // zero based indexing
+    var date = currentDate.getDate().toString().padStart(2, "0"); // "0 padding"
+    checkinInpt.setAttribute("min", `${year}-${month}-${date}`)
+    checkoutInpt.setAttribute("min", `${year}-${month}-${date}`)
+
+    var slideIndex = [1,1];
+    var slideId = ["mySlides1", "mySlides2"]
+    showSlides(1, 0);
+    showSlides(1, 1);
+
+    function plusSlides(n, no) {
+      showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+      var i;
+      var x = document.getElementsByClassName(slideId[no]);
+      if (n > x.length) {slideIndex[no] = 1}
+      if (n < 1) {slideIndex[no] = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      x[slideIndex[no]-1].style.display = "block";
+    }
+
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>

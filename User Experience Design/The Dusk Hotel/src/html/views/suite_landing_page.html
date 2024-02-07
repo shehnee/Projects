@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" initial-scale="1.0">
+		<title>The Dusk Hotel | Suites</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+		<link rel="stylesheet" href="../../css/includes/topbar.css">
+		<link rel="stylesheet" href="../../css/includes/tags.css">
+		<link rel="stylesheet" href="../../css/includes/footer.css">
+		<link rel="stylesheet" href="../../css/views/suite_landing_page.css">
+	</head>
+	<body>
+		<div id="topbar-container">
+			<a id="comp-logo-a-wrapper" href="./homepage.html"><img id="comp-logo" src="../../static/icon.svg"></a>
+			<div id="topbar-right-container">
+				<button id="topbar-member-login-btn" type="button">
+					<img src="../../static/account_icon.svg">
+					Member sign in
+				</button>
+				<a id="topbar-booknow-btn" class="global-site-btn" href="./room_booking.html">
+					BOOK NOW
+				</a>
+				<button id="menu-btn" onclick="document.getElementById('topbar-container').classList.toggle('navopen');">
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+				</button>
+			</div>
+			<div id="navigation-outer-darken"></div>
+			<div id="navigation-container">
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">ROOMS</button>
+					<div class="navigation-section-element">
+						<a href="./room_landing_page.html">ROOMS</a>
+						<a href="./suite_landing_page.html">SUITES</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">DINING</button>
+					<div class="navigation-section-element">
+						<a href="./restaurants.html">DAWN</a>
+						<a href="./reservations.html">RESERVATIONS</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">EVENTS</button>
+					<div class="navigation-section-element">
+						<a href="./event_venue.html">VENUE</a>
+						<a href="./event_wedding.html">WEDDING</a>
+						<a href="./event_corporate.html">CORPORATE</a>
+						<a href="./event_inquiry.html">INQUIRY</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">FACILITIES</button>
+					<div class="navigation-section-element">
+						<a href="./facilities.html">FACILITIES</a>
+						<a href="./facilities_booking.html">BOOKING</a>
+					</div>
+				</div>
+				<div class="navigation-section-container" onclick="this.classList.toggle('active')">
+					<button type="button">OTHERS</button>
+					<div class="navigation-section-element">
+						<a href="./promotions.html">PROMOTIONS</a>
+						<a href="./contact_us.html">CONTACT US</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="header-viewport-container">
+			<div id="image-darken-overlay"></div>
+			<h1 id="center"><p>Rooms & Suites</p><br>
+			<p class="text">Experience the essence of luxury and tranquillity <br>adorned with sophisticated decors paired with breath-taking scenery surrounding you</p> </h1>      
+		</div>
+		<div id="selector-container">
+			<a class="bignavbtn" href="./room_landing_page.html">Rooms</a>
+			<a class="bignavbtn" href="#">Suites</a>
+		</div>
+		<hr id="stylehr">
+		<br>
+		<div id="background-color">
+			<div class="firsthalf">
+				<img src="../../static/rooms/duskbedroom.png" alt="Dusk Bedroom">
+			</div>
+			<div class="secondhalf">
+				   <p class="heading">Dusk Suite</p>
+				   <hr class="stylehr2">
+			
+				   <div class = "roomdetails">
+						<div class = "firsthalf">
+							<p class = "details">80 m² / 861 ft² <span style="color: #bd9526;" >|</span> 2 Guests <span style="color:#bd9526;">|</span> City View</p>
+							<p class="para">Ideally designed for 2 guests, features elegant interiors and premium amenities, creating a captivating ambience.<br><br>Spacious layout with carefully curated furnishings and upscale features, enhances the overall comfort and style, offering our guests with an unforgettable staycation.</p>
+						</div>
+						<div class = "roomhalf2"> 
+							<p class = "prices">From:</p>
+							<p class="prices1">$890.90<span class="night">/night</span><br></p>
+							<p class="prices"><i>Includes Goods & Service Tax</i></p>
+							<p class="ratings">Ratings:</p>
+							<p class = "stars">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"><span class="review"> <i>(70)</i></span></span>
+								<br><br>
+							</p>
+							<div class="roomdetails">
+								<a href="../includes/suite_dusk.html" class="interactivebtn">VIEW MORE DETAILS</a>
+							</div>
+						 </div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div id="background-color">
+				<div class="firsthalf">
+					<img src="../../static/rooms/barbedroom.png" height="380px" alt="Bar Bedroom" >
+				</div>
+				<div class="secondhalf">
+					   <p class="heading">Bar Suite</p>
+					   <hr class="stylehr2">
+				
+					   <div class = "roomdetails">
+							<div class = "firsthalf">
+								<p class = "details">75 m² / 807 ft² <span style="color: #bd9526;" >|</span> 4 Guests <span style="color:#bd9526;">|</span> City View</p>
+								<p class="para">Ideally designed for 4 guests, features a dedicated bar area with an assortment of premium beverages and a stylish sitting area. <br><br> With attention to detail and exquisite caftsmanship, the interiors have been thoughtfully designed to create an atmosphere of refined elegance.</p>
+							</div>
+							<div class = "roomhalf2"> 
+								<p class = "prices">From:</p>
+								<p class="prices1">$790.90<span class="night">/night</span><br></p>
+								<p class="prices"><i>Includes Goods & Service Tax</i></p>
+								<p class="ratings">Ratings:</p>
+								<p class = "stars">
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star-o"><span class="review"> <i>(50)</i></span></span>
+									<br><br>
+								</p>
+								<div class="roomdetails">
+									<a href="../includes/suite_bar.html" class="interactivebtn">VIEW MORE DETAILS</a>
+								</div>
+							 </div>
+						</div>
+					</div>
+				</div>
+				<br><br>
+				<div id="background-color">
+					<div class="firsthalf">
+						<img src="../../static/rooms/roofbedroom.png" alt="Rooftop Garden Bedroom">
+					</div>
+					<div class="secondhalf">
+						   <p class="heading">Rooftop Garden Suite</p>
+						   <hr class="stylehr3">
+					
+						   <div class = "roomdetails">
+								<div class = "firsthalf">
+									<p class = "details">70 m² / 753 ft² <span style="color: #bd9526;" >|</span> 4 Guests <span style="color:#bd9526;">|</span> Skyline View</p>
+									<p class="para">Ideally designed for 4 guests, immerse yourself in the garden terrace while enjoying the view of Singapore's iconic skyline.<br><br>The Rooftop Garden Suite offers a seamless blend of luxury comfort and natural beauty, ensuring a memorable and rejuvenating stay for our guests.</p>
+								</div>
+								<div class = "roomhalf2"> 
+									<p class = "prices">From:</p>
+									<p class="prices1">$690.90<span class="night">/night</span><br></p>
+									<p class="prices"><i>Includes Goods & Service Tax</i></p>
+									<p class="ratings">Ratings:</p>
+									<p class = "stars">
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"><span class="review"> <i>(25)</i></span></span>
+										<br><br>
+									</p>
+									<div class="roomdetails">
+										<a href="../includes/suite_rooftopgarden.html" class="interactivebtn">VIEW MORE DETAILS</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>     
+		<div id="footer">
+			<h1 id="footer-heading">SHARE YOUR EXPERIENCE</h1>
+			<h3 id="footer-caption">Share your Dusk Experience with @theduskhotel and #DuskMoments</h3>
+			<hr>
+
+			<div id="footer-details">
+				<div id="footer-contact-container" class="footer-section-container">
+					<h2>GENERAL ENQUIRIES</h2>
+					<p><img id="footer-phone-icon" src="../../static/phone_icon.svg">+65 6798 8789</p>
+					<p><img id="footer-phone-icon" src="../../static/mail_icon.svg"><a href="mailto:enquiries@theduskhotel.com">enquiries@theduskhotel.com</a></p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CHECK IN / OUT</h2>
+					<p>Check in from: 10:00</p>
+					<p>Check out before 12:00</p>
+				</div>
+				<div class="footer-section-container">
+					<h2>CONNECT WITH US</h2>
+					<div id="footer-socials-container">
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-facebook" href="https://facebook.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-instagram" href="https://instagram.com"></a>
+						</div>
+						<div class="footer-socials-hover-grow-container">
+							<a class="footer-socials-redirect" id="footer-socials-twitter" href="https://twitter.com"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
