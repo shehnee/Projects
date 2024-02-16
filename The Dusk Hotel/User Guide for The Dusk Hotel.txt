@@ -1,10 +1,6 @@
 User Guide for The Dusk Hotel
 
-1. To see the HTML in browser: The Dusk Hotel > src > html > views > 
-
-click on "homepage.html" and begin your journey with The Dusk Hotel
-
-right click and open with Visual Studio Code to see the codes
+1. To see the HTML: The Dusk Hotel > src > html > views 
 
 2. To see the CSS: The Dusk Hotel > src > css > views / includes 
 
